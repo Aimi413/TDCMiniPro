@@ -1,0 +1,47 @@
+<view class="rankBox">
+	<view class="container">
+		<view class="questionCard" wx:for="{{ rankList }}" wx:key="id">
+			<view class="questioner" data-id="{{ item.netUserId }}" bindtap="goGuestDetail">
+				<image class="questionerPhoto" src="{{ item.userPhoto }}" mode="aspectFill"></image>
+				<view class="questionerInfo">
+					<view class="questionerNameBox ellipsis">
+					 	<text class="questionerName">{{ item.userName }}</text><text class="questionerCompany">{{ item.userCompany }}</text>
+					</view>
+				</view>
+			</view>
+			<navigator class="questionInfoBox" hover-class="none" url="/pages/program/question/question?id={{ item.id }}">
+				<view class="questionCaret">问</view>
+				<view class="questionInfo">
+					<view class="questionDesc">{{ item.content }}</view>
+				</view>
+			</navigator>
+			<view class="proLinkBox clear">
+				<navigator class="proLink ellipsis lt" url="/pages/program/detail/detail?id={{ item.programId }}">
+					提问于：{{ item.programTopic }}
+					<image class="proLinkIcon rt" src="/imgs/user/rightArrow.svg"></image>
+				</navigator>
+				<view class="likeBox rt {{ item.isLike ? 'hasStar' : '' }}" data-id="{{ item.id }}" data-programId="{{ item.programId }}" data-index="{{ index }}" data-isLike="{{ item.isLike }}" catchtap="starQuestion">{{ item.likeCount }}</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="openRuleWin" catchtap="openRuleWin">
+	<image class="openRuleImg" src="/imgs/openRuleIcon.png"></image>
+</view>
+<view class="dialogWin clear" hidden="{{ hideRuleWin }}">
+	<image class="closeDialogWin rt" catchtap="closeRuleWin" src="/imgs/close.svg"></image>
+	<scroll-view class="dialogBox" scroll-y="{{ true }}">
+		<view class="container">
+			<!-- <view class="ruleList">
+				<view class="ruleCaption">1.热门提问榜的介绍与规则</view>
+				<view class="ruleItem">会议日程支持参会嘉宾向演讲嘉宾发起提问，其他用户如果觉得问题问得好，可以给问题点赞。</view>
+			</view> -->
+			<view class="ruleList">
+				<view class="ruleItem">会议日程支持参会嘉宾向演讲嘉宾发起提问，其他用户如果觉得问题问得好，可以给问题点赞。</view>
+				<view class="ruleItem">热门提问排行榜，展示了本届峰会所有提问中点赞数最高的50条提问，把好问题集中呈现给大家。</view>
+				<view class="ruleItem">如果您提的问题进入热门提问排行榜，您的个人形象和企业品牌形象将获得大量曝光，并有机会获得演讲嘉宾的现场解答。</view>
+				<view class="ruleItem">心动不如行动，快来发起您的第一条提问吧！</view>
+			</view>
+		</view>
+	</scroll-view>
+</view>

@@ -1,0 +1,23 @@
+<view class="sponsor clear">
+	<image class="sponsorLogo lt" src="{{ sponsor.photo }}" mode="aspectFit" bindtap="goSponsorDetail" data-id="{{ sponsor.id }}"></image>
+	<view class="sponsorInfos lt">
+		<view class="sponsorInfosBox" bindtap="goSponsorDetail" data-id="{{ sponsor.id }}">
+			<view class="sponsorName ellipsis">{{ sponsor.name }}</view>
+			<view class="sponsorIntro ellipsis">{{ sponsor.intro2 || '一句话简介未填写' }}</view>
+			<view class="sponsorBoothBox clear">
+				<view class="sponsorTag lt" wx:if="{{ sponsor.industry.length > 0 }}">{{ sponsor.industry[0].name }}</view>
+				<view class="sponsorBooth rt" wx:if="{{ sponsor.booth != '' }}">
+					<image class="boothIcon" src="/imgs/sponsor/booth.png"></image>
+					展位 {{ sponsor.booth  }}
+				</view>
+			</view>
+		</view>
+		<view wx:if="{{ showOperate }}" class="operateBox clear">
+			<view class="concernState lt {{ sponsor.concern ? 'isConcern' : '' }}" wx:if="{{ profile.role == 2 || profile.role == 9 }}" data-concern="{{ sponsor.concern }}" data-id="{{ sponsor.id }}" data-index="{{ index }}" catchtap="followSponsor">{{ sponsor.concern ? "已关注" : "关注" }}</view>
+			<!-- <view class="sponsorShare lt" data-id="{{ sponsor.id }}" catchtap="shareSponsor">分享</view> -->
+			<button class="shareSponsor lt" data-id="{{ sponsor.id }}" data-type="sponsor" open-type="share">
+				分享
+			</button>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,8 @@
+<view class="guest colorBor outside-class" data-id="{{ guest.id }}" catchtap="goGuestDetail">
+	<view class="newMsgDot" wx:if="{{ newMessageCount > 0 }}"></view>
+	<view class="guestInfo">
+		<view class="guestName ellipsis">{{ guest.name }}</view>
+		<view class="guestCompany ellipsis">{{ guest.company }} {{ guest.jobTitle }}</view>
+	</view>
+	<image class="guestPhoto" src="{{ guest.photo || '/imgs/default.png' }}" mode="aspectFill"></image>
+</view>

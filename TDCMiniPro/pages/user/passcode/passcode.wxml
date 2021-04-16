@@ -1,0 +1,15 @@
+<view class="codeWrap {{ (profile.role == 1 || profile.role == 9) ? 'red' : '' }}">
+	<view class="codeBox">
+		<view class="codeHead clear">
+			<view class="codeInfo lt">
+				<view class="codeName ellipsis">{{ profile.name }}</view>
+				<view class="codeJobTitle ellipsis">{{ profile.company + " " + profile.jobTitle }}</view>
+			</view>
+			<image class="codePhoto rt" mode="aspectFill" src="{{ profile.photo || '/imgs/default.png' }}"></image>
+		</view>
+		<view class="codeBody">
+			<image class="codeImg" src="{{ codeImg }}"></image>
+		</view>
+	</view>
+	<view class="refreshBtn" bindtap="refreshCode">刷新</view>
+</view>

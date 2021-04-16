@@ -1,0 +1,23 @@
+<view class="concernTabs">
+	<view class="concernTab {{ currentIndex == index ? 'active' : '' }}" wx:for="{{ tabs }}" wx:key="name" data-index="{{ index }}" bindtap="switchConcern">{{ item.name }}</view>
+</view>
+<view class="concernBox">
+	<view class="container">
+		<view class="concernList {{ currentIndex == index ? 'show' : '' }}" wx:for="{{ tabs }}" wx:key="name">
+			<block wx:if="{{ index == 0 }}">
+				<block wx:for="{{ programList }}" wx:key="id">
+					<block wx:if="{{ item.program.length > 0 }}">
+						<view class="proType">{{ item.date }}  {{ item.program[0].areaName }}</view>
+						<programCard outside-class="marginBtom" wx:for="{{ item.program }}" wx:key="id" wx:for-item="subItem" program="{{ subItem }}" profile="{{ profile }}" bindfollowProgram="followProgram"></programCard>
+					</block>
+				</block>
+			</block>
+			<block wx:elif="{{ index == 1 }}">
+				<speaker outside-class="outsideBoxshadow" wx:for="{{ spkList }}" wx:key="id" speaker="{{ item }}" profile="{{ profile }}" index="{{ index }}" bindfollowSpeaker="followSpeaker"></speaker>
+			</block>
+			<block wx:else="{{ index == 2 }}">
+				<sponsor wx:for="{{ sponsorList }}" wx:key="id" sponsor="{{ item }}" profile="{{ profile }}" showOperate="{{ true }}" index="{{ index }}" bindfollowSponsor="followSponsor"></sponsor>
+			</block>
+		</view>
+	</view>
+</view>

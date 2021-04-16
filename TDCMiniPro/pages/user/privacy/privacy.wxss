@@ -1,0 +1,20 @@
+.privacyBox {
+	margin-top: 30rpx;
+}
+.privacyItem {
+	margin-bottom: 28rpx;
+}
+.privacyName {
+	margin-bottom: 20rpx;
+	font-size: 32rpx;
+	color: #000000;
+}
+.privacyVal {
+	font-size: 28rpx;
+	color: #CCCCCC;
+}
+.privacyState {
+	margin-right: 24rpx;
+	font-size: 32rpx;
+	color: #999999;
+}

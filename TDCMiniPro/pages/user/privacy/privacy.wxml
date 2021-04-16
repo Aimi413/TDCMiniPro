@@ -1,0 +1,34 @@
+<view class="privacyBox">
+	<view class="container">
+		<view class="privacyItem between">
+			<view class="privacyInfo">
+				<view class="privacyName">手机号</view>
+				<view class="privacyVal">{{ showMobile ? profile.mobile : profile.privacyMobile }}</view>
+			</view>
+			<view class="privacyStateBox between">
+				<view class="privacyState">{{ showMobile ? showMobileState : hideMobileState }}</view>
+				<switch class="switchShow" checked="{{ showMobile }}" bindchange="switchItem" data-item="mobile"></switch>
+			</view>
+		</view>
+		<view class="privacyItem between">
+			<view class="privacyInfo">
+				<view class="privacyName">邮箱</view>
+				<view class="privacyVal">{{ showEmail ? profile.email : profile.privacyEmail }}</view>
+			</view>
+			<view class="privacyStateBox between">
+				<view class="privacyState">{{ showEmail ? showEmailState : hideEmailState }}</view>
+				<switch class="switchShow" checked="{{ showEmail }}" bindchange="switchItem" data-item="email"></switch>
+			</view>
+		</view>
+		<view class="privacyItem between">
+			<view class="privacyInfo">
+				<view class="privacyName">微信号</view>
+				<view class="privacyVal">{{ showWechat ? (profile.wechat || '未填写') : profile.privacyWechat }}</view>
+			</view>
+			<view class="privacyStateBox between">
+				<view class="privacyState">{{ showWechat ? showWechatState : hideWechatState }}</view>
+				<switch class="switchShow" checked="{{ showWechat }}" bindchange="switchItem" data-item="wechat"></switch>
+			</view>
+		</view>
+	</view>
+</view>

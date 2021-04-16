@@ -1,0 +1,11 @@
+<view class="recentList">
+	<view class="container">
+		<block wx:if="{{ recentList.length > 0 }}">
+			<view class="recentGroup" wx:for="{{ recentList }}" wx:key="index">
+				<view class="contactTime">{{ item.time }}</view>
+				<guest outside-class="marginBtom" wx:for="{{ item.contactList }}" wx:for-item="subItem" guest="{{ subItem }}" newMessageCount="{{ item.newMessageCount }}" bindgoGuestDetail="goGuestDetail" wx:key="id"></guest>
+			</view>
+		</block>
+		<view wx:else class="emptyDesc">您最近没有联系的人</view>
+	</view>
+</view>

@@ -1,0 +1,9 @@
+<view class="feedbackBox">
+	<view class="container">
+		<view class="feedbackTitle">咨询反馈</view>		
+		<input class="normalInput" placeholder="请输入您的姓名" bindinput="inputName"/>
+		<input class="normalInput" placeholder="请输入您的手机或微信号" bindinput="inputMobile"/>
+		<textarea class="feedbackInput" placeholder="请输入问题描述" bindinput="inputFeedback"></textarea>
+		<view class="submitFeedback" bindtap="submitFeedback">提交</view>
+	</view>
+</view>

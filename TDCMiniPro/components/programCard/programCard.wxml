@@ -1,0 +1,48 @@
+<view class="programCard outside-class">
+	<view class="proCardHead" data-id="{{ program.id }}" data-topic="{{ program.topic }}" data-type="{{ program.belong }}" catchtap="goProDetail">
+		<view class="proTimeBox clear">
+			<view class="proTime lt">{{ program.begin }} - {{ program.end }}</view>
+			<image class="doingIcon rt" wx:if="{{ program.doing }}" src="/imgs/program/doing.gif"></image>
+		</view>
+		<view class="proTopic">{{ program.topic || program.typeName }}</view>
+	</view>
+	<view class="proCardBody" wx:if="{{ program.details.length > 0 }}" data-id="{{ program.id }}" catchtap="goProDetail">
+		<block wx:for="{{ program.details }}" wx:key="index">
+			<view class="speakerType" wx:if="{{ item.dataType != '' }}">
+				{{ item.dataType }}
+			</view>
+			<view class="goSpeakerDetail">
+				<image class="speakerAvatar" src="{{ item.speaker.photo }}"></image>
+				<view class="speakerInfos">
+					<view class="speakerName ellipsis">{{ item.speaker.name }}</view>
+					<view class="speakerCompany ellipsis">{{ item.speaker.company }} {{ item.speaker.jobTitle }}</view>
+				</view>
+			</view>
+			<!-- <navigator class="goSpeakerDetail" hover-class="none" url="/pages/speaker/detail/detail?id={{ item.speaker.id }}">
+				<image class="speakerAvatar" src="{{ item.speaker.photo }}"></image>
+				<view class="speakerInfos">
+					<view class="speakerName ellipsis">{{ item.speaker.name }}</view>
+					<view class="speakerCompany ellipsis">{{ item.speaker.company }} {{ item.speaker.jobTitle }}</view>
+				</view>
+			</navigator> -->
+		</block>
+	</view>
+	<view class="proCardBtom between {{ (hideOperate || program.topic == '') ? 'hide' : '' }}">
+		<view class="followState {{ program.isSubscribed ? 'hasFollow' : '' }}" data-id="{{ program.id }}" data-parentindex="{{ program.parentindex }}" data-proindex="{{ program.proindex }}" data-isConcern="{{ program.isSubscribed }}" catchtap="followPro">
+			{{ program.isSubscribed ? '已关注' : '关注' }}
+		</view>
+		<view class="ask" data-id="{{ program.id }}" data-topic="{{ program.topic }}" catchtap="goAsk">
+			<!-- {{ program.questionsCount > 0 ? program.questionsCount : '提问' }} -->
+			<block wx:if="{{ program.questionsCount > 0 }}">
+				<text>提问（{{ program.questionsCount }}）</text>
+			</block>
+			<block wx:else>
+				<text>提问</text>
+			</block>
+		</view>
+		<!-- <view class="sharePro" data-id="{{ program.id }}" catchtap="sharePro">分享</view> -->
+		<button class="sharePro lt" data-id="{{ program.id }}" data-type="program" open-type="share">
+			分享
+		</button>
+	</view>
+</view>

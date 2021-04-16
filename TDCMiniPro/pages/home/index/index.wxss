@@ -1,0 +1,427 @@
+.newMsgDot {
+	position: absolute;
+	width: 40rpx;
+	height: 40rpx;
+	top: 4rpx;
+	right: 15rpx;
+	font-size: 24rpx;
+	text-align: center;
+	line-height: 40rpx;
+	border-radius: 100%;
+	background-color: #EF4A5B;
+	color: #ffffff;
+}
+page {
+	background: url("https://img.traveldaily.cn/events/app/2020/home/topPanelBg.png") top center no-repeat;
+	background-size: 100% auto;
+}
+.topPanel {
+	margin-bottom: 60rpx;
+	padding-top: 30rpx;
+	/* padding-top: 80rpx; */
+	overflow: hidden;
+}
+.logoBox {
+	/* margin-bottom: 80rpx; */
+	margin-bottom: 36rpx;
+}
+.logoImg {
+	display: block;
+	width: 285rpx;
+	height: 70rpx;
+}
+.holdTime, .holdSite {
+	font-size: 24rpx;
+	line-height: 40rpx;
+	text-align: right;
+	color: #ffffff;
+}
+.bannerSwiper {
+	height: 330rpx;
+	/* height: 340rpx; */
+	/* margin-bottom: 80rpx; */
+	margin-bottom: 60rpx;
+	border-radius: 12px;
+	overflow: hidden;
+}
+.bannerLink {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.bannerImg {
+	width: 100%;
+	height: 100%;
+}
+.navs {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 80rpx;
+}
+.navTab {
+	font-size: 28rpx;
+	text-align: center;
+	color: #ffffff;
+}
+.navIcon {
+	display: block;
+	width: 88rpx;
+	height: 88rpx;
+	margin: 0px auto 20rpx;
+}
+.dynamicSwiper {
+	box-sizing: border-box;
+	height: 260rpx;
+	margin: 60rpx auto 40rpx;
+	padding: 30rpx;
+	border-radius: 6px;
+	background-color: #ffffff;
+	box-shadow: 0px 5px 5px 0px rgba(18,51,118,0.15); 
+}
+.exampleInfoBox {
+	font-size: 0px;
+}
+.examplePhoto, .exampleInfo {
+	display: inline-block;
+	vertical-align: middle;
+}
+.examplePhoto {
+	width: 68rpx;
+	height: 68rpx;
+	margin-right: 24rpx;
+	border-radius: 100%;
+}
+.exampleInfo {
+	width: auto;
+	max-width: 340rpx;
+}
+.exampleName {
+	font-size: 28rpx;
+	font-weight: bold;
+	color: var(--themeColor2);
+}
+.exampleCompany {
+	width: 100%;
+	font-size: 24rpx;
+	color: #999999;
+}
+.exampleBody {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	margin-top: 36rpx;
+	font-size: 28rpx;
+	line-height: 40rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #000000;
+}
+.exampleJumpImg {
+	width: 134rpx;
+	height: 36rpx;
+}
+.section {
+	margin-bottom: 70rpx;
+}
+.sectionHead {
+	margin-bottom: 36rpx;
+}
+.secHeadMoreLink {	
+	height: 50rpx;
+	font-size: 0px;
+	line-height: 50rpx;
+	color: #666666;
+}
+.secMoreLinkText {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 28rpx;
+	line-height: 50rpx;
+}
+.secHeadMoreCaret {
+	display: inline-block;
+	vertical-align: middle;
+	width: 30rpx;
+	height: 30rpx;
+	margin-left: 5rpx;
+}
+.program .sectionHead {
+	padding: 0 5%;
+}
+.programList {
+	width: 95%;
+	height: 320rpx;
+	margin-left: 5%;
+}
+.programList.autoHeight {
+	height: 670rpx;
+}
+.programItem {
+	width: 590rpx !important;
+}
+.programCard {
+	width: 570rpx;
+	height: 320rpx;
+	margin-right: 20rpx;
+	padding: 20rpx;
+	border-radius: 6px;
+}
+.programCard[data-id='undefined'] {
+	display: none;
+}
+.programCard:last-child {
+	margin-top: 30rpx;
+}
+.programCard[data-id='undefined'] + .programCard {
+	margin-top: 0px;
+}
+.programCard:only-child {
+	margin-top: 0px;
+}
+.programCard.dta {
+	background: url("https://img.traveldaily.cn/events/app/2020/program/detailDTABg.jpg") top center no-repeat;
+	background-size: cover;
+}
+.programCard.tdc {
+	background: url("https://img.traveldaily.cn/events/app/2020/program/detailTDCBg.jpg") top center no-repeat;
+	background-size: cover;
+}
+.programCard.hmc {
+	background: url("https://img.traveldaily.cn/events/app/2020/program/detailHMCBg.jpg") top center no-repeat;
+	background-size: cover;
+}
+.programCard.ddc {
+	/* margin-top: 30rpx; */
+	background: url("https://img.traveldaily.cn/events/app/2020/program/detailDDCBg.jpg") top center no-repeat;
+	background-size: cover;
+}
+.proCardHead {
+	margin-bottom: 20rpx;
+}
+.proCardTime, .proTopicType {
+	font-size: 24rpx;
+	color: #ffffff;
+	opacity: 0.7;
+}
+.proTopic {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	min-height: 100rpx;
+	margin-bottom: 54rpx;
+	font-size: 32rpx;
+	font-weight: bold;
+	line-height: 50rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #ffffff;
+}
+.proSpeaker {
+	position: relative;
+	font-size: 0px;
+}
+.proSpeaker.widthAuto {
+	width: 100%;
+}
+.marginLeft {
+	margin-left: 60rpx;
+}
+.proSpeakerType {
+	position: absolute;
+	font-size: 24rpx;
+	line-height: 20rpx;
+	top: -40rpx;
+	left: 0px;
+	white-space: nowrap;
+	opacity: 0.8;
+	color: #ffffff;
+}
+.proSpeakerPhoto, .proSpeakerInfo {
+	display: inline-block;
+	vertical-align: middle;
+}
+.proSpeakerPhoto {
+	box-sizing: border-box;
+	width: 65rpx;
+	height: 65rpx;
+	margin-left: 10rpx;
+	border: 1px solid #ffffff;
+	border-radius: 100%;
+}
+.widthAuto .proSpeakerPhoto {
+	margin-left: 0px;
+}
+.proSpeakerInfo {
+	width: calc(100% - 89rpx);
+	margin-left: 24rpx;
+}
+.proSpeakerName {
+	font-size: 28rpx;
+	color: #ffffff;
+}
+.proSpeakerCompany {
+	font-size: 24rpx;
+	opacity: 0.8;
+	color: #ffffff;
+}
+
+/* 演讲嘉宾 */
+.speaker {
+	width: 50%;
+	height: 375rpx;
+	margin-bottom: 70rpx;
+	text-align: center;
+}
+.speakerPhoto {
+	display: block;
+	width: 210rpx;
+	height: 210rpx;
+	margin: 0px auto 30rpx;
+}
+.speakerName {
+	margin-bottom: 20rpx;
+	font-size: 36rpx;
+	font-weight: bold;
+}
+.speakerJobTitle, .speakerCompany {
+	font-size: 28rpx;	
+	color: #999999;
+}
+.speakerJobTitle {
+	margin-bottom: 10rpx;
+}
+.goSpeakers {
+	display: block;
+	width: 225rpx;
+	height: 70rpx;
+	margin: 70rpx auto 0px;
+	font-size: 28rpx;
+	line-height: 70rpx;
+	text-align: center;
+	background-color: #F8F8F8;
+	color: #000000;
+}
+.partner {
+	padding-bottom: 200rpx;
+}
+.adSwiper {
+	height: 180rpx;
+	margin-bottom: 30rpx;
+	border-radius: 6px;
+	overflow: hidden;
+}
+.adImg {
+	width: 100%;
+	height: 180rpx;
+	border-radius: 6px;
+}
+.partner > .container {
+	width: 91%;
+}
+.partnerItem {
+	width: 150rpx;
+	margin: 0px 20rpx 50rpx 0px;
+}
+.partnerType {
+	clear: both;
+	display: block;
+	width: 100%;
+	margin-bottom: 40rpx;
+	font-size: 24rpx;
+	line-height: 30rpx;
+	color: #CCCCCC;
+}
+.partnerLogo {
+	width: 150rpx;
+	height: 65rpx;
+}
+.partnerLogo.hasMarginTop {
+	margin-top: 70rpx;
+}
+.profileBox {
+	position: fixed;
+	bottom: 60rpx;
+	right: 20rpx;
+}
+.goProfile {
+	box-sizing: border-box;
+	width: 300rpx;
+	height: 120rpx;
+	margin-right: 24rpx;
+	padding: 16rpx;
+	font-size: 0px;
+	border-radius: 4px;
+	background: url("https://img.traveldaily.cn/events/app/2020/home/goProfileCardBg.png") center center/100% auto no-repeat;
+}
+.profileInfo, .profilePhoto {
+	display: inline-block;
+	vertical-align: middle;
+}
+.profilePhoto {
+	width: 80rpx;
+	height: 80rpx;
+	margin-left: 24rpx;
+	border-radius: 100%;
+}
+.profileInfo {
+	width: calc(100% - 112rpx);
+}
+.profileName {
+	margin-bottom: 10rpx;
+	font-size: 32rpx;
+	font-weight: bold;
+	color: var(--themeColor2);
+}
+.profileCompany {
+	font-size: 24rpx;
+	color: #999999;
+}
+.goMyMsg {
+	position: relative;
+	box-sizing: border-box;
+	display: flex;
+	width: 120rpx;
+	height: 120rpx;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 24rpx;
+	border: 1px solid #CCCCCC;
+	border-radius: 4px;
+	background-color: #ffffff;
+	color: #999999;
+}
+.goMyMsgIcon {
+	width: 44rpx;
+	height: 41rpx;
+	margin-bottom: 13rpx;
+}
+
+.winAdBox {
+	width: 686rpx;
+	/* height: 865rpx; */
+	height: 915rpx;
+	margin: 0px auto;
+	padding-top: 50rpx;
+	border-radius: 6px;
+	overflow: hidden;
+}
+.winAdImg {
+	display: block;
+	width: 100%;
+	height: 668rpx;
+	border-radius: 6px 6px 0px 0px;
+	background-color: var(--themeColor);
+}
+.ourLogo {
+	overflow: hidden;	
+	height: 195rpx;
+	background-color: #ffffff;
+}
+.ourLogoImg {
+	display: block;
+	width: 280rpx;
+	height: 70rpx;
+	margin: 62rpx auto 0px;
+}

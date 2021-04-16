@@ -1,0 +1,122 @@
+.detailBox {
+	margin: 30rpx 0px 0px;
+	padding-bottom: 250rpx;
+}
+.guestIntro {
+	margin: 30rpx 0px;
+	padding-bottom: 30rpx;
+	font-size: 28rpx;
+	line-height: 48rpx;
+	border-bottom: 1px solid #E5E5E5;
+	color: #000000;
+}
+.interaction {
+	margin-top: 60rpx;
+}
+.sectionHead {
+    margin-bottom: 36rpx;
+}
+.message {
+	margin-bottom: 40rpx;
+	padding-bottom: 40rpx;
+	border-bottom: 1px solid #e5e5e5;
+}
+.messager {
+	width: 70rpx;
+	height: 70rpx;
+	margin-right: 20rpx;
+	border-radius: 100%;
+}
+.messageInfos {
+	width: calc(100% - 90rpx);
+}
+.messagerNameBox {
+	margin-bottom: 10rpx;
+}
+.messagerName {
+	max-width: 400rpx;
+	font-size: 28rpx;
+	color: var(--themeColor2);
+}
+.receiveTip {
+	display: flex;
+	align-items: center;
+	font-size: 24rpx;
+	color: #666666;
+}
+.receiveTipIcon {
+	width: 24rpx;
+	height: 24rpx;
+	margin-right: 10rpx;
+}
+.messagerCompany {
+	margin-bottom: 20rpx;
+	font-size: 24rpx;
+	color: #999999;
+}
+.messageContent {
+	margin-bottom: 20rpx;
+	font-size: 24rpx;
+	line-height: 40rpx;
+	color: #666666;
+}
+.messageTime {
+	font-size: 24rpx;
+	color: #CCCCCC;
+}
+.operateBox {
+	position: fixed;
+	bottom: 60rpx;
+	right: 20rpx;
+}
+.goDynamic {
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 108rpx;
+	height: 108rpx;
+	font-size: 20rpx;
+	border-radius: 4px;
+	background-color: var(--themeColor2);
+	color: #FFFFFF;
+}
+.dynamicIcon {
+	width: 44rpx;
+	height: 44rpx;
+	margin-bottom: 10rpx;
+}
+.openContactWin {
+	width: 300rpx;
+	height: 108rpx;
+	margin-left: 20rpx;
+	font-size: 36rpx;
+	line-height: 108rpx;
+	text-align: center;
+	border-radius: 4px;
+	background-color: var(--themeColor);
+	color: #ffffff;
+}
+.sendBox {
+	margin-top: 30rpx;
+}
+.helloInput {
+	box-sizing: border-box;
+	width: 530rpx;
+	height: 70rpx;
+	margin-right: 30rpx;
+	padding: 0px 10rpx;
+	border-radius: 4px;
+	background-color: #F8F8F8;
+}
+.sendBtn {
+	width: calc(100% - 560rpx);
+	height: 70rpx;
+	font-size: 32rpx;
+	line-height: 70rpx;
+	text-align: center;
+	border-radius: 4px;
+	background-color: var(--themeColor);
+	color: #FFFFFF;
+}

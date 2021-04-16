@@ -1,0 +1,48 @@
+<view class="profileBox">
+	<view class="container">
+		<view class="avatarBox">
+			<image class="avatarImg" src="{{ profile.photo || '/imgs/default.png' }}" mode="aspectFill"></image>
+			<view class="changePhoto" catchtap="changePhoto">
+				<image class="changePhotoIcon" src="/imgs/user/changePhoto.png"></image>
+			</view>
+		</view>
+		<view class="profileCard">
+			<view class="profileItem clear">
+				<view class="profileCaption lt">姓名</view>
+				<view class="profileVal rt">{{ profile.name }}</view>
+			</view>
+			<view class="profileItem clear">
+				<view class="profileCaption lt">公司</view>
+				<view class="profileVal rt">{{ profile.company }}</view>
+			</view>
+			<view class="profileItem clear">
+				<view class="profileCaption lt">职位</view>
+				<view class="profileVal rt">{{ profile.jobTitle }}</view>
+			</view>
+			<view class="profileItem clear">
+				<view class="profileCaption lt">手机号</view>
+				<view class="profileVal rt">{{ profile.mobile }}</view>
+			</view>
+			<view class="profileItem clear">
+				<view class="profileCaption lt">邮箱</view>
+				<view class="profileVal rt">{{ profile.email }}</view>
+			</view>
+		</view>
+		<view class="goChangeBox">
+			<navigator class="goChangeItem between" hover-class="none" url="/pages/user/edit/edit?type=wechat">
+				<view class="goChangeCaption">微信号</view>
+				<view class="goChangeValBox between">
+					<view class="goChangeVal ellipsis">{{ profile.wechat || '未填写' }}</view>
+					<image class="goChangeIcon" src="/imgs/home/rightArrow.svg"></image>
+				</view>
+			</navigator>
+			<navigator class="goChangeItem between" hover-class="none" url="/pages/user/edit/edit?type=intro">
+				<view class="goChangeCaption">个人简介</view>
+				<view class="goChangeValBox between">
+					<view class="goChangeVal ellipsis">{{ profile.intro || '未填写' }}</view>
+					<image class="goChangeIcon" src="/imgs/home/rightArrow.svg"></image>
+				</view>
+			</navigator>			
+		</view>
+	</view>
+</view>

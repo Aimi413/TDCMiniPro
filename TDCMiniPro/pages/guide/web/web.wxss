@@ -1,0 +1,6 @@
+.pdfTip {
+    margin: 200rpx auto;
+	font-size: 28rpx;
+    color: #333;
+    text-align: center;
+}

@@ -1,0 +1,66 @@
+<view id="{{ 'postCard' + post.id }}" class="postCard {{ post.type != 2 ? 'noPadBtom' : '' }}">
+	<view class="postCardTop" data-id="{{ post.id }}" data-type="{{ post.type }}" bindtap="goDetail">
+		<view class="personInfos clear" wx:if="{{ showPhoto }}">
+			<view class="personInfoBox lt">
+				<image class="personPhoto" src="{{ post.socialId == -1 ? '/imgs/seriesTDC_cn.jpg' : post.socialPhoto }}" mode="aspectFill"></image>
+				<view class="personInfo">
+					<view class="personName ellipsis">{{ post.socialName }}</view>
+					<view class="personCompany ellipsis">{{ post.socialCompany }}</view>
+				</view>
+			</view>
+			<view class="postTime rt">{{ post.time }}</view>
+		</view>
+		<view class="personInfos clear" wx:else>
+			<view class="postTime lt">{{ post.time }}</view>
+			<view class="delPost rt" data-id="{{ post.id }}" data-index="{{ index }}" data-belong="{{ belong }}" catchtap="delPost">
+				<image class="delPostIcon" src="/imgs/del.png"></image>
+				删除
+			</view>
+		</view>
+		<view class="postContent" wx:if="{{ post.type != 2 }}"><text>{{ post.content }}</text></view>
+		<view class="question" wx:elif="{{ post.type == 2 }}" data-id="{{ post.program.id }}" catchtap="goProdetail">
+			<view class="questionCaret">问</view>
+			<view class="questionInfo">
+				<view class="questionDesc">{{ post.content }}</view>
+			</view>
+		</view>
+		<image class="postImg" wx:if="{{ post.type != 2 && post.image != '' }}" src="{{ post.image }}" data-img="{{ post.image }}" mode="aspectFill" catchtap="previewImg"></image>
+		<view class="programCard {{ post.program.belong }}" wx:elif="{{ post.type == 2 }}" data-id="{{ post.program.id }}" catchtap="goProdetail">
+			<view class="proCardHead">
+				<view class="proCardTime">{{ post.program.date }} {{ post.program.begin }} - {{ post.program.end }}</view>
+			</view>
+			<view class="proTopic">{{ post.program.topic }}</view>
+			<view class="proCardBtom clear">
+				<block wx:for="{{ post.program.details }}" wx:key="proSpkIndex" wx:for-index="proSpkIndex" wx:for-item="proSpkItem">
+					<view class="proSpeaker lt {{ proSpkItem.dataType != '' && proSpkIndex != 0 ? 'marginLeft' : '' }}" wx:if="{{ post.program.details.length > 1 }}">
+						<view class="proSpeakerType">{{ proSpkItem.dataType }}</view>
+						<image class="proSpeakerPhoto" src="{{ proSpkItem.speaker.photo }}" mode="aspectFill"></image>
+					</view>
+					<view class="proSpeaker widthAuto lt" wx:else>
+						<view class="proSpeakerType">{{ proSpkItem.dataType }}</view>
+						<image class="proSpeakerPhoto" src="{{ proSpkItem.speaker.photo }}" mode="aspectFill"></image>
+						<view class="proSpeakerInfo">
+							<view class="proSpeakerName ellipsis">{{ proSpkItem.speaker.name }}</view>
+							<view class="proSpeakerCompany ellipsis">{{ proSpkItem.speaker.company }} {{ proSpkItem.speaker.jobTitle }}</view>
+						</view>
+					</view>
+				</block>
+			</view>
+		</view>
+	</view>
+	<view class="followBox between" wx:if="{{ post.type != 2 }}">
+		<view class="followState {{ post.isLike ? 'hasFollow' : '' }}" data-id="{{ post.id }}" data-belong="{{ belong }}" data-index="{{ index }}" data-islike="{{ post.isLike }}" catchtap="starPost">
+			{{ post.likeCount > 0 ? post.likeCount : '点赞' }}
+		</view>
+		<view class="comment" data-id="{{ post.id }}" data-belong="{{ belong }}" data-index="{{ index }}" bindtap="goDetail">{{ post.commentCount > 0 ? post.commentCount : '评论' }}</view>
+		<button class="sharePost" data-id="{{ post.id }}" open-type="share">分享</button>
+	</view>
+	<view class="commentBox" wx:if="{{ post.commentList.length > 0 }}" data-id="{{ post.id }}" bindtap="goDetail">
+		<block wx:for="{{ post.commentList }}" wx:for-item="commentItem" wx:for-index="commentIndex" wx:key="commentIndex">
+			<view class="commentItem" wx:if="{{ commentIndex < 3}}">
+				<text class="commentator">{{ commentItem.socialName }}：</text>
+				<text class="commentDesc">{{ commentItem.content }}</text>
+			</view>
+		</block>
+	</view>
+</view>

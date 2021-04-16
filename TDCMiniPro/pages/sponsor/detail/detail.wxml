@@ -1,0 +1,129 @@
+<view class="sponsorBox">
+	<view class="container">
+		<view class="sponsorCard clear">
+			<view class="sponsorInfos lt">
+				<view class="sponsorName">{{ sponsor.name }}</view>
+				<view class="sponsorIntro">{{ sponsor.intro2 || '一句话简介未填写' }}</view>
+				<view class="sponsorTags clear">
+					<view class="sponsorTag lt" wx:for="{{ sponsor.industry }}" wx:key="id">
+						{{ item.name }}
+					</view>
+				</view>
+			</view>
+			<view class="sponsorLogo rt">
+				<image class="sponsorLogoImg" src="{{ sponsor.photo }}" mode="aspectFit"></image>
+				<image class="memberTag" wx:if="{{ sponsor.companyId > 0 }}" src="/imgs/sponsor/memberTag.png"></image>
+			</view>
+			<view class="sponsorBooth" wx:if="{{ sponsor.booth != '' }}">
+				<image class="boothIcon" src="/imgs/sponsor/booth1.png"></image>
+				展位 {{ sponsor.booth }}
+			</view>
+		</view>
+		<view class="section intro">
+			<view class="sectionHead">
+				<view class="sectionTitle">公司介绍</view>
+			</view>
+			<view class="sponsorIntro">{{ sponsor.intro || "公司介绍未填写" }}</view>
+			<navigator class="goYellowPage" hover-class="none" wx:if="{{ sponsor.companyId > 0 }}" url="/pages/guide/web/web?src=https://hub.traveldaily.cn/company/{{ sponsor.companyId }}">了解更多</navigator>
+		</view>
+		<view class="section events" wx:if="{{ events.length > 0 }}">
+			<view class="sectionHead">
+				<view class="sectionTitle">同期活动</view>
+			</view>
+			<swiper class="eventList">
+				<swiper-item class="event" wx:for="{{ events }}" wx:key="id" data-id="{{ item.id }}" catchtap="expandEvent">
+					<image class="eventImg" src="{{ item.image }}"></image>
+					<view class="eventName ellipsis">{{ item.name }}</view>
+					<view class="eventTime ellipsis">活动时间: {{ item.time }}</view>
+					<view class="eventSite ellipsis">活动地点： {{ item.location }}</view>
+				</swiper-item>
+			</swiper>
+		</view>
+		<view class="section products" wx:if="{{ products.length > 0 }}">
+			<view class="sectionHead">
+				<view class="sectionTitle">产品介绍</view>
+			</view>
+			<view class="product" wx:for="{{ products }}" wx:key="id" data-id="{{ item.id }}" catchtap="expandProduct">
+				<image class="productLogo" src="{{ item.logo }}" mode="aspectFit"></image>
+				<view class="productInfos">
+					<view class="productName ellipsis">{{ item.name }}</view>
+					<view class="productSummary">{{ item.summary }}</view>
+				</view>
+			</view>
+		</view>
+		<view class="section contact" wx:if="{{ contactPerson.length == 0 && (contact.name != null && contact.name != undefined && contact.name != '') }}">
+			<view class="sectionHead">
+				<view class="sectionTitle">指定联系人</view>
+			</view>
+			<view class="contactCard">
+				<view class="contactItem between">
+					<view class="contactCaption">联系人</view>
+					<view class="contactVal">{{ contact.name || '未指定联系人' }}</view>
+				</view>
+				<view class="contactItem between">
+					<view class="contactCaption">手机</view>
+					<view class="contactVal">{{ contact.mobile || '未填写' }}</view>
+				</view>
+				<view class="contactItem between">
+					<view class="contactCaption">联系电话</view>
+					<view class="contactVal">{{ contact.phone == 'null' ? '未填写' : contact.phone || '未填写' }}</view>
+				</view>
+				<view class="contactItem between">
+					<view class="contactCaption">邮箱</view>
+					<view class="contactVal">{{ contact.email || '未填写' }}</view>
+				</view>
+			</view>
+		</view>
+		<view class="section attendees" wx:if="{{ sponsor.attendees.length > 0 }}">
+			<view class="sectionHead">
+				<view class="sectionTitle">出席人员</view>
+			</view>
+			<view class="attend" wx:for="{{ sponsor.attendees }}" wx:key="id" data-id="{{ item.id }}" bindtap="goGuestDetail">
+				<image class="attendPhoto" src="{{ item.photo }}" mode="aspectFill"></image>
+				<view class="attendInfos">
+					<view class="attendName">
+						{{ item.name }}
+						<text class="isContactTag" wx:if="{{ item.isContact }}">指定联系人</text>
+					</view>
+					<view class="attendCompany ellipsis">
+						{{ item.jobTitle }}
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>	
+</view>
+<view class="operateBox clear">
+	<view class="followSponsor lt {{ sponsor.concern ? 'hasFollow' : '' }}" wx:if="{{ profile.role == 2 }}" data-id="{{ sponsor.id }}" data-concern="{{ sponsor.concern }}" catchtap="followSponsor">
+		{{ sponsor.concern ? '已关注' : '关注' }}
+	</view>
+	<!-- <view class="shareSponsor lt" data-id="{{ sponsor.id }}" catchtap="shareSponsor">
+		分享
+	</view> -->
+	<button id="shareSponsor" class="shareSponsor lt" data-id="{{ sponsor.id }}" open-type="share">
+		分享
+	</button>
+	<!-- <navigator class="goRegister rt" hover-class="none" url="/pages/guide/web/web?src=https://event.traveldaily.cn/tdc2020/register">立即报名</navigator> -->
+</view>
+<view class="dialogWin clear" hidden="{{ hideWin }}">
+	<image class="closeDialogWin rt" catchtap="closeWin" src="/imgs/close.svg"></image>
+	<scroll-view class="dialogBox" scroll-y="{{ true }}">
+		<view class="container">
+			<view class="showEvent" hidden="{{ hideType == 'product' }}">
+				<image class="showEventImg" src="{{ showEvent.image }}" mode="aspectFill"></image>
+				<view class="showEventName">{{ showEvent.name }}</view>
+				<view class="showEventLabel">活动时间</view>
+				<view class="showEventTime">{{ showEvent.time }}</view>
+				<view class="showEventLabel">活动地点</view>
+				<view class="showEventSite">{{ showEvent.location }}</view>
+				<view class="showEventLabel">活动简介</view>
+				<view class="showEventIntro">{{ showEvent.intro }}</view>
+			</view>
+			<view class="showPro" hidden="{{ hideType == 'event' }}">
+				<view class="showProName">{{ showProduct.name }}</view>
+				<view class="showProIntro">{{ showProduct.summary }}</view>
+				<image class="showProImg" mode="aspectFit" src="{{ showProduct.logo }}"></image>
+			</view>
+		</view>
+	</scroll-view>
+</view>

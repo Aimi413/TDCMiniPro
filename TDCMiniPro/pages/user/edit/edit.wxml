@@ -1,0 +1,11 @@
+<view class="editBox">
+	<view class="container">
+		<view class="editItem" wx:if="{{ editType != 'intro' }}">
+			<input class="editInput" type="text" value="{{ profile.wechat }}" placeholder="{{ placeHolder }}" data-type="{{ editType }}" bindinput="changeVal" />
+		</view>
+		<view class="editItem introItem" wx:else>
+			<textarea class="editInput introInput" value="{{ profile.intro }}" placeholder="{{ placeHolder }}" data-type="{{ editType }}" bindinput="changeVal"></textarea>
+		</view>
+		<button class="saveBtn" bindtap="saveInfo">保存</button>
+	</view>
+</view>

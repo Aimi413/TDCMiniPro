@@ -1,0 +1,70 @@
+.newMsgDot {
+	top: 55rpx;
+}
+.industryTypeBox {
+	box-sizing: border-box;
+	height: 120rpx;
+	padding: 30rpx 5%;
+	background-color: #F8F8F8;
+}
+.industryType {
+	width: calc(100% - 150rpx);
+	font-size: 38rpx;
+	font-weight: bold;
+	color: var(--themeColor2);
+}
+.concernTag {
+	width: 130rpx;
+	height: 60rpx;
+	font-size: 28rpx;
+	line-height: 60rpx;
+	text-align: center;
+	border-radius: 4px;
+	background-color: var(--themeColor);
+	color: #ffffff;
+}
+.concernTag.hasConcern {
+	background-color: #ffffff;
+	color: #999999;
+}
+.company {
+	box-sizing: border-box;
+	position: relative;
+	padding: 40rpx 0px;
+	border-bottom: 1px solid #E5E5E5;
+}
+.company:last-child {
+	border-bottom: 0px;
+}
+.companyName {
+	max-width: 610rpx;
+	margin-bottom: 30rpx;
+	font-size: 44rpx;
+	color: #000000;
+}
+.companyAttend {
+	width: 48rpx;
+	height: 48rpx;
+	margin-right: 12rpx;
+	border-radius: 100%;
+}
+.attendsCount {
+	margin-top: 10rpx;
+	font-size: 28rpx;
+	color: #999999;
+}
+.showCompanyName {
+	margin-bottom: 48rpx;
+	font-size: 38rpx;
+	font-weight: bold;
+	color: var(--themeColor2);
+}
+.showAttendsCount {
+	margin-left: 24rpx;
+	font-size: 28rpx;
+	font-weight: normal;
+	color: #666666;
+}
+.marginBtom {
+	margin-bottom: 36rpx;
+}

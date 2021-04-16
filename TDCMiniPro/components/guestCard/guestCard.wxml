@@ -1,0 +1,32 @@
+<view class="guestCard colorBor" data-id="{{ guest.id }}">
+	<view class="guestInfos">
+		<view class="guestInfo">
+			<view class="guestName ellipsis">{{ guest.name }}</view>
+			<view class="guestCompany">{{ guest.company }} {{ guest.jobTitle }}</view>
+		</view>
+		<image class="guestPhoto" src="{{ guest.photo }}" mode="aspectFill"></image>
+	</view>
+	<view class="guestContacts">
+		<view class="guestContact ellipsis">
+			<image class="contactIcon" src="/imgs/user/profileMobile.png"></image>
+			{{ guest.mobile }}
+		</view>
+		<view class="guestContact ellipsis">
+			<image class="contactIcon" src="/imgs/user/profileEmail.png"></image>
+			{{ guest.email }}
+		</view>
+		<view class="guestContact ellipsis">
+			<image class="contactIcon" src="/imgs/user/profileWexin.png"></image>
+			{{ guest.wechat || '未填写' }}
+		</view>
+	</view>
+	<view class="privacyTip {{ showPrivacyTip ? 'show' : '' }}">
+		<image class="privacyTipIcon" src="/imgs/wenhao.png"></image>
+		隐私设置
+		<view class="privacyTipBox">
+			<view class="privacyTipWrap">
+				用户可以通过个人中心-隐私设置，选择公开/不公开某项联系方式。
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,100 @@
+.questionBox {
+	margin-top: 30rpx;
+}
+.question {
+	margin-bottom: 35rpx;
+}
+.questionHead {
+	margin-bottom: 20rpx;
+}
+.questionTime {
+	font-size: 24rpx;
+	color: #CCCCCC;
+}
+.delQuestion {
+	display: flex;
+	height: 40rpx;
+	justify-content: center;
+	align-items: center;
+	font-size: 24rpx;
+	line-height: 40rpx;
+	color: #999999;
+}
+.delIcon {
+	width: 28rpx;
+	height: 28rpx;
+	margin-right: 10rpx;
+}
+.questionBody {
+	box-sizing: border-box;
+	padding: 40rpx 30rpx;
+	font-size: 0px;
+	border-radius: 2px;
+	background-color: #F8F8F8;
+}
+.questionCaret, .questionInfo {
+	display: inline-block;
+	vertical-align: top;
+}
+.questionCaret {
+	width: 40rpx;
+	height: 40rpx;
+	margin-right: 20rpx;
+	font-size: 24rpx;
+	line-height: 40rpx;
+	text-align: center;
+	border-radius: 2px;
+	background-color: #FFA216;
+	color: #ffffff;
+}
+.questionInfo {
+	width: calc(100% - 60rpx);
+}
+.questionDesc {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	margin-bottom: 30rpx;
+	font-size: 32rpx;
+	line-height: 48rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #000000;
+}
+.likeDesc {
+	display: flex;
+	height: 40rpx;
+	margin-bottom: 50rpx;
+	align-items: center;
+	font-size: 24rpx;
+	line-height: 40rpx;
+	color: #666666;
+}
+.likeDesc:last-child {
+	margin-bottom: 0px;
+}
+.likeIcon {
+	width: 28rpx;
+	height: 28rpx;
+	margin-right: 10rpx;
+}
+.questionLink {
+	position: relative;
+	padding-right: 30rpx;
+	font-size: 28rpx;
+	line-height: 40rpx;
+	color: #4474E6;
+}
+.questionLinkIcon {
+	position: absolute;
+	width: 28rpx;
+	height: 28rpx;
+	right: 0px;
+	top: 6rpx;
+}
+.emptyDesc {
+	margin: 200rpx auto 0px;
+	font-size: 28rpx;
+	text-align: center;
+	color: #999999;
+}

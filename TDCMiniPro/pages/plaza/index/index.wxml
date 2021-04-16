@@ -1,0 +1,37 @@
+<view class="dynamicTabs">
+	<view class="dynamicTab {{ openType == item.type ? 'active' : '' }}" wx:for="{{ dynamicTabs }}" wx:key="type" data-type="{{ item.type }}" bindtap="switchDynamic">{{ item.name }}</view>
+</view>
+<scroll-view class="dynamicBox allBox" hidden="{{ openType != 'all' }}" scroll-y="true" scroll-top="{{ allScrTop }}" lower-threshold="150" bindscrolltolower="loadMoreList">
+	<view class="container padBtom">
+		<navigator class="liveLink" hover-class="none" url="/pages/guide/web/web?src=https://www.traveldaily.cn/go/16970">
+			<image class="liveImg" src="/imgs/zhibo.png" mode="aspectFill"></image>
+		</navigator>
+		<postCard wx:for="{{ allList }}" wx:key="allItemIndex" wx:for-item="allItem" wx:for-index="allItemIndex" post="{{ allItem }}" belong="allList" index="{{ allItemIndex }}" showPhoto="{{ true }}" bindstarPost="starPost"></postCard>	
+		<view wx:if="{{ complete_all }}" class="noMoreTip">已全部加载完毕</view>
+	</view>
+</scroll-view>
+<scroll-view class="dynamicBox officialBox" hidden="{{ openType != 'official' }}" scroll-y="true" scroll-top="{{ officialScrTop }}" lower-threshold="150" bindscrolltolower="loadMoreList">
+	<view class="container padBtom">		
+		<postCard wx:for="{{ officialList }}" wx:key="officialItemIndex" wx:for-item="officialItem" wx:for-index="officialItemIndex" post="{{ officialItem }}" belong="officialList" index="{{ officialItemIndex }}" showPhoto="{{ true }}" bindstarPost="starPost"></postCard>		
+		<view wx:if="{{ complete_official }}" class="noMoreTip">已全部加载完毕</view>
+	</view>
+</scroll-view>
+<scroll-view class="dynamicBox selectedBox" hidden="{{ openType != 'selected' }}" scroll-y="true" scroll-top="{{ selectedScrTop }}" lower-threshold="150" bindscrolltolower="loadMoreList">
+	<view class="container padBtom">
+		<postCard wx:for="{{ selectedList }}" wx:key="selectedIndex" wx:for-item="selectedItem" wx:for-index="selectedIndex" post="{{ selectedItem }}" belong="selectedList" index="{{ selectedIndex }}" showPhoto="{{ true }}" bindstarPost="starPost"></postCard>
+		<view wx:if="{{ complete_selected }}" class="noMoreTip">已全部加载完毕</view>
+	</view>
+</scroll-view>
+<scroll-view class="dynamicBox personalBox" hidden="{{ openType != 'personal' }}" scroll-y="true" scroll-top="{{ personalScrTop }}" lower-threshold="150" bindscrolltolower="loadMoreList">
+	<view class="container padBtom">
+		<block wx:if="{{ personalList.length > 0 }}">
+			<postCard wx:for="{{ personalList }}" wx:key="personalItemIndex" wx:for-item="personalItem" wx:for-index="personalItemIndex" post="{{ personalItem }}" belong="personalList" index="{{ personalItemIndex }}" showPhoto="{{ false }}" bindstarPost="starPost" binddelPost="delPost"></postCard>
+		</block>
+		<view wx:else class="emptyDesc">您暂时还没有发布过动态</view>
+		<view wx:if="{{ complete_personal && personalList.length > 0 }}" class="noMoreTip">已全部加载完毕</view>
+	</view>
+</scroll-view>
+<view class="goPublish" bindtap="goPublish" hidden="{{ hideGoPublish }}">
+	<image class="goPublishIcon" src="/imgs/add.png"></image>
+	发布动态
+</view>

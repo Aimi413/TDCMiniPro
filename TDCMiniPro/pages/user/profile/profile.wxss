@@ -1,0 +1,72 @@
+.profileBox {
+	margin-top: 50rpx;
+}
+.avatarBox {
+	position: relative;
+	width: 210rpx;
+	height: 210rpx;
+	margin: 0px auto 50rpx;
+	border-radius: 100%;
+	overflow: hidden;
+}
+.avatarImg {
+	width: 210rpx;
+	height: 210rpx;
+	border-radius: 100%;
+}
+.changePhoto {
+	display: flex;
+	position: absolute;
+	width: 210rpx;
+	height: 210rpx;
+	top: 0px;
+	left: 0px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.changePhotoIcon {
+	width: 54rpx;
+	height: 54rpx;
+}
+.profileCard {
+	box-sizing: border-box;
+	margin: 0px auto 30rpx;
+	padding: 40rpx 30rpx;	
+	border-radius: 6px;
+	background-color: #F8F8F8;
+}
+.profileItem:not(:last-child) {
+	margin-bottom: 40rpx;
+}
+.profileCaption {
+	font-size: 28rpx;
+	color: #999999;
+}
+.profileVal {
+	max-width: 500rpx;
+	font-size: 28rpx;
+	text-align: right;
+	color: #000000;
+}
+.goChangeItem {
+	height: 120rpx;
+}
+.goChangeCaption {
+	width: 150rpx;
+}
+.goChangeValBox {
+	width: calc(100% - 170rpx);
+}
+.goChangeIcon {
+	width: 28rpx;
+	height: 28rpx;
+	margin-left: 20rpx;
+}
+.goChangeVal {
+	width: calc(100% - 48rpx);
+	font-size: 32rpx;
+	text-align: right;
+	color: #999999;
+}

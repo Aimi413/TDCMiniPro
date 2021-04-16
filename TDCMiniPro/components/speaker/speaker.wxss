@@ -1,0 +1,71 @@
+.ellipsis{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.between {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.speaker {
+	margin-bottom: 30rpx;
+	border-radius: 6px;
+	overflow: hidden;
+}
+.speakerInfos {
+	box-sizing: border-box;
+	padding: 30rpx;
+	font-size: 0px;
+	background-color: #F8F8F8;
+}
+.speakerPhoto, .speakerInfo {
+	display: inline-block;
+	vertical-align: middle;
+}
+.speakerPhoto {
+	width: 120rpx;
+	height: 120rpx;
+	margin-right: 20rpx;
+	border-radius: 100%;
+}
+.speakerInfo {
+	width: calc(100% - 140rpx);
+}
+.speakerName {
+	margin-bottom: 20rpx;
+	font-size: 36rpx;
+	color: #000000;
+}
+.speakerCompany {
+	font-size: 28rpx;
+	color: #999999;
+}
+.followBox {
+	height: 90rpx;
+	background-color: #FFFFFF;
+}
+.followState, .shareSpeaker {
+	width: 120rpx !important;
+	height: 90rpx;
+	padding-left: 48rpx !important;
+	font-size: 24rpx !important;
+	line-height: 90rpx;
+	text-align: left;
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: 28rpx auto;
+	color: #666666;
+}
+.followState {
+	background-image: url("https://img.traveldaily.cn/events/app/2020/star1.png");
+}
+.followState.hasFollow {
+	background-image: url("https://img.traveldaily.cn/events/app/2020/star2.png");
+}
+.shareSpeaker {
+	margin: 0px !important;
+	font-weight: normal;
+	background-image: url("https://img.traveldaily.cn/events/app/2020/share1.png");
+	background-color: #FFFFFF;
+}

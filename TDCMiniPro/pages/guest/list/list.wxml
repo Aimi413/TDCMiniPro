@@ -1,0 +1,33 @@
+<view class="industryBox">
+	<view class="industryList" wx:for="{{ industryList }}" wx:key="id">
+		<view class="industryTypeBox clear">
+			<view class="industryType ellipsis lt">{{ item.name }}</view>
+			<view class="concernTag rt {{ item.concern ? 'hasConcern' : '' }}" wx:if="{{ profile.role == 2 || profile.role == 4 || profile.role == 9 || profile.role == 10 }}" data-id="{{ item.id }}" data-concern="{{ item.concern }}" data-index="{{ index }}" catchtap="concernIndustry">
+				{{ item.concern ? '已关注' : '关注' }}
+			</view>
+		</view>
+		<view class="container">
+			<view class="company" wx:for="{{ item.companies }}" wx:for-item="subItem" wx:for-index="idx" wx:key="idx" data-parent="{{ item.name }}" data-company="{{ subItem.name }}" catchtap="checkAttends">
+				{{ subItem.id }}
+				<!-- <view class="newMsgDot"></view> -->
+				<view class="companyName ellipsis"><text decode="true">{{ subItem.name }}</text></view>
+				<view class="companyAttends clear" wx:if="{{ subItem.attendeeses.length > 0 }}">
+					<image class="companyAttend lt" wx:for="{{ subItem.attendeeses }}" wx:for-item="attend" wx:key="id" wx:if="{{ index < 8 }}" src="{{ attend.photo }}" mode="aspectFill"></image>
+					<text class="attendsCount lt">共{{ subItem.attendeeses.length }}人</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="dialogWin clear" hidden="{{ hideAttendsWin }}">
+	<image class="closeDialogWin rt" catchtap="closeWin" src="/imgs/close.svg"></image>
+	<scroll-view class="dialogBox" scroll-y="true">
+		<view class="container">
+			<view class="showCompanyName">
+				<text decode="true">{{ showCompany.name }}</text>
+				<text class="showAttendsCount">共 {{ showCompany.attendeeses.length }} 人</text>
+			</view>
+			<guest outside-class="marginBtom" wx:for="{{ showCompany.attendeeses }}" guest="{{ item }}" bindgoGuestDetail="goGuestDetail" wx:key="id"></guest>
+		</view>
+	</scroll-view>
+</view>

@@ -1,0 +1,12 @@
+<view class="sponsorBox">
+	<view class="container">
+		<view class="guideImgBox" bindtap="previewExhibitionVenue">
+			<image class="guideImg" src="/imgs/sponsor/guideImg.png"></image>
+		</view>
+		<view class="sponsorList">
+			<block wx:if="{{ sponsorList.length > 0 }}">
+				<sponsor wx:for="{{ sponsorList }}" sponsor="{{ item }}" showOperate="{{ false }}" index="{{ index }}" wx:key="id"></sponsor>
+			</block>
+		</view>
+	</view>
+</view>

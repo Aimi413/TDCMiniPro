@@ -1,0 +1,33 @@
+<view class="msgBox">
+	<view class="container">
+		<block wx:if="{{ msgList.length > 0 }}">
+			<view class="msgCard" wx:for="{{ msgList }}" wx:key="id">
+				<!-- <view class="newMsgDot"></view> -->
+				<view class="msgTime">{{ item.sentTime }}</view>
+				<view class="msgCaption">{{ item.title }}</view>
+				<view class="msgContent" wx:if="{{ item.content != '' }}">{{ item.content }}</view>
+				<navigator class="goDetailLink" hover-class="none" wx:if="{{ item.type == 2 }}" url="/pages/program/detail/detail?id={{ item.itemId }}">
+					查看详情
+					<image class="goDetailLinkIcon" src="/imgs/user/rightArrow.svg"></image>
+				</navigator>
+				<navigator class="goDetailLink" hover-class="none" wx:elif="{{ item.type == 5 }}" url="/pages/plaza/detail/detail?id={{ item.itemId }}">
+					查看详情
+					<image class="goDetailLinkIcon" src="/imgs/user/rightArrow.svg"></image>
+				</navigator>
+				<navigator class="goDetailLink" hover-class="none" wx:elif="{{ item.type == 3 }}" url="/pages/guest/detail/detail?id={{ item.itemId }}">
+					查看详情
+					<image class="goDetailLinkIcon" src="/imgs/user/rightArrow.svg"></image>
+				</navigator>
+				<navigator class="goDetailLink" hover-class="none" wx:elif="{{ item.type == 4 }}" url="/pages/guest/list/list?filter={{ item.itemId }}">
+					查看详情
+					<image class="goDetailLinkIcon" src="/imgs/user/rightArrow.svg"></image>
+				</navigator>
+				<navigator class="goDetailLink" hover-class="none" wx:elif="{{ item.type == 7 }}" url="/pages/sponsor/detail/detail?id={{ item.itemId }}">
+					查看详情
+					<image class="goDetailLinkIcon" src="/imgs/user/rightArrow.svg"></image>
+				</navigator>
+			</view>
+		</block>
+		<view wx:else class="emptyDesc">您暂时没有收到消息</view>
+	</view>
+</view>

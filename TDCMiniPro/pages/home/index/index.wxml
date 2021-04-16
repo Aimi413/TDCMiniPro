@@ -1,0 +1,268 @@
+<view class="topPanel">
+	<view class="container">
+		<view class="logoBox clear">
+			<image class="logoImg lt" src="/imgs/home/tdLogo.png" mode="aspectFit"></image>
+			<view class="holdInfo rt">
+				<view class="holdTime">11月25日-27日</view>
+				<view class="holdSite">上海</view>
+			</view>
+		</view>
+		<swiper class="bannerSwiper" autoplay="{{ bannerList.length > 1 ? true : false }}" indicator-dots="{{ bannerList.length > 1 ? true : false }}" indicator-color="#ffffff" indicator-active-color="#B90F19">
+			<swiper-item class="bannerItem" wx:for="{{ bannerList }}" wx:key="id" wx:for-item="bannerItem">				
+				<view wx:if="{{ bannerItem.hasHttp }}" class="bannerLink" catchtap="goUrlLink" data-hashttp="true" data-link="{{ bannerItem.link }}" data-realLink="/pages/guide/web/web?src={{ bannerItem.realLink }}">
+					<image class="bannerImg" src="{{ bannerItem.imageFile }}" mode="widthFix"></image>
+				</view>
+				<navigator wx:elif="{{ bannerItem.questionnaire }}" app-id="wxebadf544ddae62cb" target="miniProgram" version="release" open-type="navigate" path="pages/survey/index?{{ bannerItem.realLink }}">
+					<image class="bannerImg" src="{{ bannerItem.imageFile }}" mode="widthFix"></image>
+				</navigator>
+				<view wx:else class="bannerLink" data-url="{{ bannerItem.link }}" catchtap="goUrlLink" data-hashttp="false" data-link="{{ bannerItem.link }}" data-realLink="{{ bannerItem.realLink }}">
+					<image class="bannerImg" src="{{ bannerItem.imageFile }}" mode="widthFix"></image>
+				</view>
+				<!-- <navigator wx:if="{{ bannerItem.hasHttp }}" class="bannerLink" hover-class="none" url="/pages/guide/web/web?src={{ bannerItem.realLink }}">
+					<image class="bannerImg" src="{{ bannerItem.imageFile }}" mode="widthFix"></image>
+				</navigator>
+				<navigator wx:elif="{{ bannerItem.questionnaire }}" app-id="wxebadf544ddae62cb" target="miniProgram" version="release" open-type="navigate" path="pages/survey/index?{{ bannerItem.realLink }}">
+					<image class="bannerImg" src="{{ bannerItem.imageFile }}" mode="widthFix"></image>
+				</navigator>
+				<navigator wx:else class="bannerLink" hover-class="none" url="{{ bannerItem.realLink }}">
+					<image class="bannerImg" src="{{ bannerItem.imageFile }}" mode="widthFix"></image>
+				</navigator> -->
+			</swiper-item>
+		</swiper>
+		<view class="navs">
+			<!-- <navigator class="navTab" hover-class="none" url="/pages/program/index/index">
+				<image class="navIcon" src="/imgs/home/tabProIcon.png"></image>
+				日程
+			</navigator> -->
+			<navigator class="navTab" hover-class="none" url="/pages/guest/index/index">
+				<image class="navIcon" src="/imgs/home/tabSpeakerIcon.png"></image>
+				嘉宾
+			</navigator>
+			<navigator class="navTab" hover-class="none" url="/pages/sponsor/index/index">
+				<image class="navIcon" src="/imgs/home/tabSponsorIcon.png"></image>
+				展商 & 赞助商
+			</navigator>
+			<!-- <view class="navTab" bindtap="goVenue">
+				<image class="navIcon" src="/imgs/home/tabGuideIcon.png"></image>
+				参会指南
+			</view> -->
+			<navigator class="navTab" hover-class="none" url="/pages/guide/web/web">
+				<image class="navIcon" src="/imgs/home/tabGuideIcon.png"></image>
+				参会指南
+			</navigator>
+			<view class="navTab" catchtap="goUserPage" data-type="goPasscode" data-url="/pages/user/passcode/passcode">
+				<image class="navIcon" src="/imgs/home/tabCodeIcon.png"></image>
+				通行码
+			</view>
+		</view>
+		<block wx:if="{{ dynamicList.length > 0 }}">
+			<swiper class="dynamicSwiper" autoplay="{{ dynamicList.length > 1 ? true : false }}" interval="3000">
+				<swiper-item class="dynamicSlide" wx:for="{{ dynamicList }}" wx:for-item="dynamicItem" wx:for-index="dynamicItemIndex" wx:key="id">
+					<navigator class="goDynamic" hover-class="none" url="/pages/plaza/index/index">
+						<view class="exampleHead clear">
+							<view class="exampleInfoBox lt">
+								<image class="examplePhoto" src="{{ dynamicItem.socialId == -1 ? '/imgs/seriesTDC_cn.jpg' : (dynamicItem.socialPhoto || '/imgs/default.png') }}" mode="aspectFill"></image>
+								<view class="exampleInfo">
+									<view class="exampleName ellipsis">{{ dynamicItem.socialName }}</view>
+									<view class="exampleCompany ellipsis">{{ dynamicItem.socialCompany }}</view>
+								</view>
+							</view>
+							<image class="exampleJumpImg rt" src="/imgs/home/dynamicJump.gif"></image>
+						</view>
+						<view class="exampleBody">{{ dynamicItem.content }}</view>
+					</navigator>
+				</swiper-item>
+			</swiper>
+		</block>
+	</view>
+</view>
+<view class="section program">
+	<view class="sectionHead clear">
+		<view class="sectionTitle lt">会议日程</view>
+		<navigator class="secHeadMoreLink rt" hover-class="none" url="/pages/program/index/index">
+			<text class="secMoreLinkText">全部</text>
+			<image class="secHeadMoreCaret" src="/imgs/home/rightArrow.svg"></image>
+		</navigator>
+	</view>
+	<swiper class="programList {{ autoHeight ? 'autoHeight' : '' }}" circular="true" current="{{ currProIndex }}" bindchange="changeHeight">
+		<swiper-item class="programItem" wx:for="{{ dtaList }}" wx:for-item="dtaItem" wx:for-index="dtaItemIndex" wx:key="id">
+			<view class="programCard {{ dtaItem.belong }}" data-id="{{ dtaItem.id }}" data-topic="{{ dtaItem.topic }}" bindtap="goProgramDetail">
+				<view class="proCardHead clear">
+					<view class="proCardTime lt">{{ dtaItem.date }} {{ dtaItem.begin }} - {{ dtaItem.end }}</view>
+					<view class="proTopicType rt"><text decode="true">{{ dtaItem.typeName }}</text></view>
+				</view>
+				<view class="proTopic"><text decode="true">{{ dtaItem.topic || dtaItem.typeName }}</text></view>
+				<view class="proCardBtom clear">
+					<block wx:for="{{ dtaItem.details }}" wx:key="subDtaItemIndex" wx:for-index="subDtaItemIndex" wx:for-item="subDtaItem">
+						<view class="proSpeaker lt {{ subDtaItem.dataType != '' && subDtaItemIndex != 0 ? 'marginLeft' : '' }}" wx:if="{{ dtaItem.details.length > 1 }}">
+							<view class="proSpeakerType">{{ subDtaItem.dataType }}</view>
+							<image class="proSpeakerPhoto" src="{{ subDtaItem.speaker.photo }}" mode="aspectFill"></image>
+						</view>
+						<view class="proSpeaker widthAuto lt" wx:else>
+							<view class="proSpeakerType">{{ subDtaItem.dataType }}</view>
+							<image class="proSpeakerPhoto" src="{{ subDtaItem.speaker.photo }}" mode="aspectFill"></image>
+							<view class="proSpeakerInfo">
+								<view class="proSpeakerName ellipsis">{{ subDtaItem.speaker.name }}</view>
+								<view class="proSpeakerCompany ellipsis">{{ subDtaItem.speaker.company }} {{ subDtaItem.speaker.jobTitle }}</view>
+							</view>
+						</view>
+					</block>
+				</view>
+			</view>
+		</swiper-item>
+		<swiper-item class="programItem" wx:for="{{ tdcList }}" wx:key="id">
+			<view class="programCard {{ item.belong }}" data-id="{{ item.id }}" data-topic="{{ item.topic }}" bindtap="goProgramDetail">
+				<view class="proCardHead clear">
+					<view class="proCardTime lt">{{ item.date }} {{ item.begin }} - {{ item.end }}</view>
+					<view class="proTopicType rt"><text decode="true">{{ item.typeName }}</text></view>
+				</view>
+				<view class="proTopic"><text decode="true">{{ item.topic || item.typeName }}</text></view>
+				<view class="proCardBtom clear">
+					<block wx:for="{{ item.details }}" wx:key="index" wx:for-item="subItem">
+						<view class="proSpeaker lt {{ subItem.dataType != '' && index != 0 ? 'marginLeft' : '' }}" wx:if="{{ item.details.length > 1 }}">
+							<view class="proSpeakerType">{{ subItem.dataType }}</view>
+							<image class="proSpeakerPhoto" src="{{ subItem.speaker.photo }}" mode="aspectFill"></image>
+						</view>
+						<view class="proSpeaker widthAuto lt" wx:else>
+							<view class="proSpeakerType">{{ subItem.dataType }}</view>
+							<image class="proSpeakerPhoto" src="{{ subItem.speaker.photo }}" mode="aspectFill"></image>
+							<view class="proSpeakerInfo">
+								<view class="proSpeakerName ellipsis">{{ subItem.speaker.name }}</view>
+								<view class="proSpeakerCompany ellipsis">{{ subItem.speaker.company }} {{ subItem.speaker.jobTitle }}</view>
+							</view>
+						</view>
+					</block>
+				</view>
+			</view>
+		</swiper-item>
+		<swiper-item class="programItem" wx:for="{{ largerList }}" wx:key="id">
+			<view class="programCard {{ hmcList[index].belong }}" data-id="{{ hmcList[index].id }}" data-topic="{{ hmcList[index].topic }}" bindtap="goProgramDetail">
+				<view class="proCardHead clear">
+					<view class="proCardTime lt">{{ hmcList[index].date }} {{ hmcList[index].begin }} - {{ hmcList[index].end }}</view>
+					<view class="proTopicType rt"><text decode="true">{{ hmcList[index].typeName }}</text></view>
+				</view>
+				<view class="proTopic"><text decode="true">{{ hmcList[index].topic || hmcList[index].typeName }}</text></view>
+				<view class="proCardBtom clear">
+					<block wx:for="{{ hmcList[index].details }}" wx:key="hmcSpkIndex" wx:for-item="hmcSpkItem" wx:for-index="hmcSpkIndex">
+						<view class="proSpeaker lt {{ hmcSpkItem.dataType != '' && hmcSpkIndex != 0 ? 'marginLeft' : '' }}" wx:if="{{ hmcList[index].details.length > 1 }}">
+							<view class="proSpeakerType">{{ hmcSpkItem.dataType }}</view>
+							<image class="proSpeakerPhoto" src="{{ hmcSpkItem.speaker.photo }}" mode="aspectFill"></image>
+						</view>
+						<view class="proSpeaker widthAuto lt" wx:else>
+							<view class="proSpeakerType">{{ hmcSpkItem.dataType }}</view>
+							<image class="proSpeakerPhoto" src="{{ hmcSpkItem.speaker.photo }}" mode="aspectFill"></image>
+							<view class="proSpeakerInfo">
+								<view class="proSpeakerName ellipsis">{{ hmcSpkItem.speaker.name }}</view>
+								<view class="proSpeakerCompany ellipsis">{{ hmcSpkItem.speaker.company }} {{ hmcSpkItem.speaker.jobTitle }}</view>
+							</view>
+						</view>
+					</block>
+				</view>
+			</view>
+			<view class="programCard {{ ddcList[index].belong }}" data-id="{{ ddcList[index].id }}" data-topic="{{ ddcList[index].topic }}" bindtap="goProgramDetail">
+				<view class="proCardHead clear">
+					<view class="proCardTime lt">{{ ddcList[index].date }} {{ ddcList[index].begin }} - {{ ddcList[index].end }}</view>
+					<view class="proTopicType rt"><text decode="true">{{ ddcList[index].typeName }}</text></view>
+				</view>
+				<view class="proTopic"><text decode="true">{{ ddcList[index].topic || ddcList[index].typeName }}</text></view>
+				<view class="proCardBtom clear">
+					<block wx:for="{{ ddcList[index].details }}" wx:key="ddcSpkIndex" wx:for-item="subItem" wx:for-index="ddcSpkIndex">
+						<view class="proSpeaker lt {{ subItem.dataType != '' && ddcSpkIndex != 0 ? 'marginLeft' : '' }}" wx:if="{{ ddcList[index].details.length > 1 }}">
+							<view class="proSpeakerType">{{ subItem.dataType }}</view>
+							<image class="proSpeakerPhoto" src="{{ subItem.speaker.photo }}" mode="aspectFill"></image>
+						</view>
+						<view class="proSpeaker widthAuto lt" wx:else>
+							<view class="proSpeakerType">{{ subItem.dataType }}</view>
+							<image class="proSpeakerPhoto" src="{{ subItem.speaker.photo }}" mode="aspectFill"></image>
+							<view class="proSpeakerInfo">
+								<view class="proSpeakerName ellipsis">{{ subItem.speaker.name }}</view>
+								<view class="proSpeakerCompany ellipsis">{{ subItem.speaker.company }} {{ subItem.speaker.jobTitle }}</view>
+							</view>
+						</view>
+					</block>
+				</view>
+			</view>
+		</swiper-item>
+	</swiper>
+</view>
+<view class="section speakers">
+	<view class="container">
+		<view class="sectionHead clear">
+			<view class="sectionTitle lt">演讲嘉宾</view>
+		</view>
+		<view class="speakerList clear">
+			<navigator class="speaker {{ index % 2 == 0 ? 'lt' : 'rt' }}" hover-class="none" wx:for="{{ spkList }}" wx:key="id" url="/pages/speaker/detail/detail?id={{ item.id }}">
+				<image class="speakerPhoto" src="{{ item.photo }}" mode="aspectFit"></image>
+				<view class="speakerName ellipsis">{{ item.name }}</view>
+				<view class="speakerJobTitle ellipsis">{{ item.jobTitle }}</view>
+				<view class="speakerCompany ellipsis">{{ item.company }}</view>
+			</navigator>
+		</view>
+		<navigator class="goSpeakers" hover-class="none" url="/pages/speaker/index/index">
+			全部演讲嘉宾
+		</navigator>
+	</view>
+</view>
+<view class="section partner">
+	<view class="container">
+		<view class="sectionHead clear">
+			<view class="sectionTitle lt">合作伙伴</view>
+		</view>
+		<swiper class="adSwiper" autoplay="{{ false }}" wx:if="{{ adList.length > 0 }}" indicator-dots="{{ adList.length > 1 }}" indicator-color="#ffffff" indicator-active-color="#B90F19">
+			<swiper-item class="adItem" wx:for="{{ adList }}" wx:key="id" wx:for-item="partnerAdItem">
+				<navigator wx:if="{{ partnerAdItem.hasHttp }}" class="adItemLink" hover-class="none" url="/pages/guide/web/web?src={{ partnerAdItem.realLink }}">
+					<image class="adImg" src="{{ partnerAdItem.imageFile }}" mode="widthFix"></image>
+				</navigator>
+				<navigator wx:elif="{{ partnerAdItem.questionnaire }}" app-id="wxebadf544ddae62cb" target="miniProgram" version="release" open-type="navigate" path="pages/survey/index?{{ partnerAdItem.realLink }}">
+					<image class="bannerImg" src="{{ partnerAdItem.imageFile }}" mode="widthFix"></image>
+				</navigator>
+				<navigator wx:else class="adItemLink" hover-class="none" url="{{ partnerAdItem.realLink }}">
+					<image class="adImg" src="{{ partnerAdItem.imageFile }}" mode="widthFix"></image>
+				</navigator>
+			</swiper-item>
+		</swiper>
+		<view class="partnerBox clear">
+			<view class="partnerList clear" wx:for="{{ partnerList }}" wx:key="partnerItemIndex" wx:for-index="partnerItemIndex" wx:for-item="partnerItem">
+				<view class="partnerItem lt" wx:for="{{ partnerItem }}" wx:key="id" wx:for-index="subPartnerItemIndex" wx:for-item="subPartnerItem">
+					<view class="partnerType" wx:if="{{ subPartnerItem.typeName != '' }}">{{ subPartnerItem.typeName }}</view>
+					<image class="partnerLogo {{ subPartnerItem.typeName == '' && subPartnerItemIndex < 4 ? 'hasMarginTop' : ''}}" src="{{ subPartnerItem.logo }}" mode="widthFix" lazy-load="true"></image>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="profileBox clear">
+	<view id="goProfile" class="goProfile colorBor lt" data-url="/pages/user/index/index" data-type="goProfile" catchtap="goUserPage">
+		<view class="profileInfo">
+			<view class="profileName ellipsis">{{ profile.name || '请登录' }}</view>
+			<view class="profileCompany ellipsis">{{ profile.company + " " +  profile.jobTitle || '立即登录' }}</view>
+		</view>
+		<image class="profilePhoto" mode="aspectFill" src="{{ profile.photo || '/imgs/default.png' }}"></image>
+	</view>
+	<view id="goMyMsg" class="goMyMsg" data-url="/pages/user/msg/msg" data-type="goProfile" catchtap="goUserPage">
+		<view class="newMsgDot" wx:if="{{ profile.newMessageCount > 0 }}">{{ profile.newMessageCount > 99 ? '99' : profile.newMessageCount }}</view>
+		<image class="goMyMsgIcon" src="/imgs/home/goMyMsgIcon.png"></image>
+		消息
+	</view>
+</view>
+<view class="dialogWin clear" hidden="{{ hideAdWin }}">
+	<image catchtap="closeAdWin" class="closeDialogWin rt" src="/imgs/adClose.svg"></image>
+	<view class="winAdBox">
+		<block wx:for="{{ winAdList }}" wx:key="id" wx:for-item="winAdItem" wx:for-index="winAdItemIndex">
+			<block wx:if="{{ winAdItemIndex < 1 }}">
+				<navigator wx:if="{{ winAdItem.hasHttp }}" class="winAdImgLink" hover-class="none" url="/pages/guide/web/web?src={{ winAdItem.realLink }}">
+					<image class="winAdImg" src="{{ winAdItem.imageFile }}" mode="aspectFill"></image>
+				</navigator>
+				<navigator wx:elif="{{ winAdItem.questionnaire }}" app-id="wxebadf544ddae62cb" target="miniProgram" version="release" open-type="navigate" path="pages/survey/index?{{ winAdItem.realLink }}">
+					<image class="bannerImg" src="{{ winAdItem.imageFile }}" mode="widthFix"></image>
+				</navigator>
+				<navigator wx:else class="winAdImgLink" hover-class="none" url="{{ winAdItem.realLink }}">
+					<image class="winAdImg" src="{{ winAdItem.imageFile }}" mode="aspectFill"></image>
+				</navigator>
+			</block>
+		</block>
+		<view class="ourLogo">
+			<image class="ourLogoImg" src="/imgs/tdLogo.png"></image>
+		</view>
+	</view>
+</view>

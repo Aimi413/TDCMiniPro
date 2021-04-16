@@ -1,0 +1,30 @@
+<view class="questionBox">
+	<view class="container">
+		<block wx:if="{{ questionList.length > 0 }}">
+			<view class="question" wx:for="{{ questionList }}" wx:key="id">
+				<view class="questionHead clear">
+					<view class="questionTime lt">{{ item.postTime }}</view>
+					<view class="delQuestion rt" catchtap="deleteQuestion" data-id="{{ item.id }}" data-idx="{{ index }}">
+						<image class="delIcon" src="/imgs/del.png"></image>
+						删除
+					</view>
+				</view>
+				<view class="questionBody">
+					<view class="questionCaret">问</view>
+					<view class="questionInfo">
+						<view class="questionDesc">{{ item.content }}</view>
+						<view class="likeDesc">
+							<image class="likeIcon" src="/imgs/like.png"></image>
+							{{ item.likeCount }} 人表示很赞
+						</view>
+						<navigator class="questionLink ellipsis clear" hover-class="none" wx:if="{{ item.programTopic != '' }}" url="/pages/program/detail/detail?id={{ item.programId }}">
+							提问于：{{ item.programTopic }}
+							<image class="questionLinkIcon rt" src="/imgs/user/rightArrow.svg"></image>
+						</navigator>
+					</view>
+				</view>
+			</view>
+		</block>
+		<view wx:else class="emptyDesc">您暂时没有提问的问题</view>
+	</view>
+</view>

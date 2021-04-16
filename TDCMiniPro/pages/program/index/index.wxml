@@ -1,0 +1,47 @@
+<view class="programTabs">
+	<view class="programTab {{ currentIndex == index ? 'active' : '' }}" wx:for="{{ programList }}" wx:key="index" data-index="{{ index }}" bindtap="switchProgram">{{ item.date }}</view>
+</view>
+<view class="programBox {{ currentIndex == index ? 'show' : '' }} {{ item.type }}" wx:for="{{ programList }}" wx:key="index">
+	<view class="container">
+		<view class="typeBox" data-type="{{ item.type }}" bindtap="openProIntroWin">
+			<image class="typeLogo" wx:if="{{ item.type == 'dta' }}" src="/imgs/seriesAward.svg" mode="aspectFit"></image>
+			<image class="typeLogo" wx:elif="{{ item.type == 'tdc' }}" src="/imgs/seriesTDC_cn.jpg" mode="aspectFit"></image>
+			<image class="typeLogo" wx:elif="{{ item.type == 'hmc' }}" src="/imgs/seriesHMC.svg" mode="aspectFit"></image>
+			<image class="typeLogo" wx:elif="{{ item.type == 'ddc' }}" src="/imgs/seriesDDC.svg" mode="aspectFit"></image>
+			<view class="typeInfos" wx:if="{{ item.type == 'dta' }}">
+				<view class="typeName ellipsis">数字旅游奖</view>
+				<view class="typeSite ellipsis">会场：格乐利雅艺术中心（徐汇店）16号宴会厅</view>
+			</view>
+			<view class="typeInfos" wx:elif="{{ item.type == 'tdc' }}">
+				<view class="typeName ellipsis">环球旅讯峰会</view>
+				<view class="typeSite ellipsis">会场：上海国际会议中心7楼【上海厅】</view>
+			</view>
+			<view class="typeInfos" wx:elif="{{ item.type == 'hmc' }}">
+				<view class="typeName ellipsis">中国住宿业峰会</view>
+				<view class="typeSite ellipsis">会场：上海国际会议中心7楼【上海厅】</view>
+			</view>
+			<view class="typeInfos" wx:elif="{{ item.type == 'ddc' }}">
+				<view class="typeName ellipsis">中国目的地数字化峰会</view>
+				<view class="typeSite ellipsis">会场：上海国际会议中心7楼【上海厅】</view>
+			</view>
+			<image class="typeCaret" src="/imgs/home/rightArrow.svg"></image>
+		</view>
+		<programCard outside-class="marginBtom" wx:for="{{ item.program }}" wx:for-item="subItem" wx:key="id" program="{{ subItem }}" profile="{{ profile }}" hideOperate="{{ false }}" bindfollowProgram="followProgram"></programCard>
+	</view>
+</view>
+<navigator class="goSearch" hover-class="none" url="/pages/search/index/index?searchType=program">
+	<icon class="goSearchIcon" type="search" size="30" color="#ffffff"></icon>
+</navigator>
+<view class="dialogWin clear" hidden="{{ hideProIntroWin }}">
+	<image class="closeDialogWin rt" catchtap="closeProIntroWin" src="/imgs/close.svg"></image>
+	<scroll-view class="dialogBox" scroll-y="true">
+		<view class="container">
+			<view class="showProLogo">
+				<image class="showProLogoImg" src="{{ showPro.logo }}" mode="aspectFit"></image>
+			</view>
+			<view class="showProName">{{ showPro.name }}</view>
+			<view class="showProVenue">{{ showPro.venue }}</view>
+			<view class="showProIntro" wx:for="{{ showPro.introList }}" wx:key="index">{{ item }}</view>
+		</view>
+	</scroll-view>
+</view>

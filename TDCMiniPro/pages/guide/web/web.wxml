@@ -1,0 +1,2 @@
+<web-view wx:if="{{ notpdf }}" src="{{ src }}"></web-view>
+<view wx:else class="pdfTip">小程序页面内不支持直接查看PDF文件，当前已由手机文件系统查看</view>

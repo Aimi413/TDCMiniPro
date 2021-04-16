@@ -1,0 +1,210 @@
+.detailPanel {
+	box-sizing: border-box;
+	padding: 36rpx 30rpx 55rpx;
+}
+.detailPanel.tdc {
+	background: url("https://img.traveldaily.cn/events/app/2020/program/detailTDCBg.jpg") top center no-repeat;
+	background-size: cover;
+	
+}
+.detailPanel.hmc {
+	background: url("https://img.traveldaily.cn/events/app/2020/program/detailHMCBg.jpg") top center no-repeat;
+	background-size: cover;
+}
+.detailPanel.ddc {
+	background: url("https://img.traveldaily.cn/events/app/2020/program/detailDDCBg.jpg") top center no-repeat;
+	background-size: cover;
+}
+.detailPanel.dta {
+	background: url("https://img.traveldaily.cn/events/app/2020/program/detailDTABg.jpg") top center no-repeat;
+	background-size: cover;
+}
+.proType {
+	margin-bottom: 36rpx;
+	font-size: 32rpx;
+	color: #FFFFFF;
+	opacity: 0.7;
+}
+.proTopic {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	min-height: 156rpx;
+	margin-bottom: 55rpx;
+	font-size: 40rpx;
+	font-weight: bold;
+	line-height: 78rpx;	
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #FFFFFF;
+}
+.proTime, .proSite {
+	display: flex;
+	align-items: center;
+	font-size: 24rpx;
+	color: #FFFFFF;
+}
+.proTimeIcon, .proSiteIcon {
+	width: 28rpx;
+	height: 28rpx;
+	margin-right: 10rpx;
+}
+.proTime {
+	margin-bottom: 30rpx;
+}
+.detailBox {
+	position: relative;
+	margin: -10px 0px 0px;
+	padding-top: 60rpx;
+	padding: 60rpx 0px 250rpx;
+	border-radius: 10px 10px 0px 0px;
+	z-index: 10;
+}
+.section {
+	margin-bottom: 36rpx;
+	padding-bottom: 36rpx;
+	border-bottom: 1px solid #E5E5E5;
+}
+.section:last-child {
+	border-bottom: 0px;
+}
+.sectionHead {
+	margin-bottom: 36rpx;
+}
+.secHeadMoreLink {	
+	height: 50rpx;
+	font-size: 0px;
+	color: #666666;
+}
+.secMoreLinkText {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 28rpx;
+	line-height: 50rpx;
+}
+.secHeadMoreCaret {
+	display: inline-block;
+	vertical-align: middle;
+	width: 30rpx;
+	height: 30rpx;
+	margin-left: 5rpx;
+}
+.proIntro {
+	font-size: 28rpx;
+	line-height: 48rpx;
+	color: #000000;
+}
+.proIntro img {
+	max-width: 100%;
+}
+.speakerType {
+	margin-bottom: 30rpx;
+	font-size: 24rpx;
+	color: #999999;
+}
+.goSpeakerDetail {
+	margin-bottom: 30rpx;
+	font-size: 0px;
+}
+.speakerAvatar, .speakerInfos {
+	display: inline-block;
+	vertical-align: middle;
+}
+.speakerAvatar {
+	width: 80rpx;
+	height: 80rpx;
+	margin-right: 30rpx;
+	border-radius: 100%;
+}
+.speakerInfos {
+	width: calc(100% - 110rpx);
+}
+.speakerName {
+	margin-bottom: 16rpx;
+	font-size: 32rpx;
+	color: #000000;
+}
+.speakerCompany {
+	font-size: 24rpx;
+	color: #999999;
+}
+.yellowBg {
+	background-color: #FFF6E7;
+}
+
+.goDynamic {
+	position: fixed;
+	bottom: 200rpx;
+	right: 20rpx;
+	z-index: 10;
+}
+.goDynamicIcon {
+	width: 138rpx;
+	height: 138rpx;
+}
+.operateBox {
+	position: fixed;
+	bottom: 60rpx;
+	right: 20rpx;
+	z-index: 10;
+}
+.followPro, .goQuestion, .sharePro {
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 108rpx !important;
+	height: 108rpx;
+	padding-top: 60rpx !important;
+	font-size: 20rpx;
+	border-radius: 4px;
+	background-color: var(--themeColor2);
+	background-position: top 20rpx center;
+	background-repeat: no-repeat;
+	background-size: auto 40rpx;
+	color: #FFFFFF;
+}
+.followPro {
+	margin-right: 20rpx;
+	background-image: url("https://img.traveldaily.cn/events/app/2020/star3.png");
+}
+.followPro.hasFollow {
+	background-image: url("https://img.traveldaily.cn/events/app/2020/star2.png");
+}
+.goQuestion {
+	margin-right: 20rpx;
+	background-image: url("https://img.traveldaily.cn/events/app/2020/questionWhite.png");
+}
+.sharePro {
+	font-weight: normal;
+	background-image: url("https://img.traveldaily.cn/events/app/2020/share2.png");
+}
+.goRegister {
+	width: 300rpx;
+	height: 108rpx;
+	margin-left: 20rpx;
+	font-size: 36rpx;
+	line-height: 108rpx;
+	text-align: center;
+	border-radius: 4px;
+	background-color: var(--themeColor);
+	color: #ffffff;
+}
+.askInput {
+	box-sizing: border-box;
+	width: 100%;
+	height: 270rpx;
+	padding: 20rpx;
+	background-color: #F8F8F8;
+}
+.submitAsk {
+	width: 300rpx !important;
+	height: 100rpx;
+	margin: 40rpx auto !important;
+	font-size: 32rpx;
+	font-weight: normal;
+	line-height: 100rpx;
+	border-radius: 4px;
+	background-color: var(--themeColor);
+	color: #ffffff;
+}

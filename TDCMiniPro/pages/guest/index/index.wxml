@@ -1,0 +1,71 @@
+<view class="dataPanel">
+	<view class="dataNum">1800+</view>
+	<view class="dataDesc">演讲嘉宾&参会嘉宾</view>
+	<navigator class="goSearch" hover-class="none" url="/pages/search/index/index?searchType=guest">
+		<icon class="goSearchIcon" type="search" size="24" color="#ffffff"></icon>立即搜索
+	</navigator>
+</view>
+<view class="section concerns">
+	<view class="container">
+		<view class="sectionHead">
+			<view class="sectionTitle">我关注的行业</view>
+		</view>
+		<view class="concernList clear" wx:if="{{ concernList.length > 0 }}">
+			<navigator class="industryTag lt" hover-class="none" wx:for="{{ concernList }}" wx:key="id" url="/pages/guest/list/list?filter={{ item.id }}">
+				<!-- <view class="newMsgDot" wx:if="{{ item.hasNew }}"></view> -->
+				{{ item.name }}
+			</navigator>
+		</view>
+		<view wx:else class="noConcernTip">暂未关注行业</view>
+		<view class="openAllIndustry" catchtap="openIndustryWin">查看全部行业</view>
+	</view>
+</view>
+<view class="section recent" wx:if="{{ recentList.length != 0 }}">
+	<view class="container">
+		<view class="sectionHead clear">
+			<view class="sectionTitle lt">最近联系的人</view>
+			<navigator class="seeMoreLink rt" hover-class="none" url="/pages/user/recent/recent">
+				全部
+				<image class="seeMoreLinkIcon" src="/imgs/home/rightArrow.svg"></image>
+			</navigator>
+		</view>
+		<view class="recentList">
+			<navigator class="guestLink" hover-class="none" wx:for="{{ recentList }}" wx:if="{{ index < 8 }}" wx:key="index" url="/pages/guest/detail/detail?id={{ item.socialUser.id }}">
+				<view class="newMsgDot" wx:if="{{ item.newMessageCount > 0 }}"></view>
+				<image class="guestPhoto" src="{{ item.socialUser.photo }}" mode="aspectFill"></image>
+			</navigator>
+		</view>
+	</view>
+</view>
+<swiper class="btomAds" indicator-dots="{{ adList.length > 1 }}" indicator-color="#ffffff" indicator-active-color="#B90F19">
+	<swiper-item class="btomAdItems" wx:for="{{ adList }}" wx:key="id" wx:for-item="btomAdItem">
+		<navigator wx:if="{{ btomAdItem.hasHttp }}" class="adLink" hover-class="none" url="/pages/guide/web/web?src={{ btomAdItem.realLink }}">
+			<image class="adImg" src="{{ btomAdItem.imageFile }}" mode="widthFix"></image>
+		</navigator>
+		<navigator wx:elif="{{ btomAdItem.questionnaire }}" app-id="wxebadf544ddae62cb" target="miniProgram" version="release" open-type="navigate" path="pages/survey/index?{{ btomAdItem.realLink }}">
+			<image class="bannerImg" src="{{ btomAdItem.imageFile }}" mode="widthFix"></image>
+		</navigator>
+		<navigator wx:else class="adLink" hover-class="none" url="{{ btomAdItem.realLink }}">
+			<image class="adImg" src="{{ btomAdItem.imageFile }}" mode="widthFix"></image>
+		</navigator>
+	</swiper-item>
+</swiper>
+<view class="dialogWin clear" hidden="{{ hideIndustryWin }}">
+	<image class="closeDialogWin rt" catchtap="closeIndustryWin" src="/imgs/close.svg"></image>
+	<scroll-view class="dialogBox" scroll-y="true">
+		<view class="container">
+			<view class="industryGroup" wx:for="{{ industryList }}" wx:key="id">
+				<view class="sectionTitle industryGroupTitle">{{ item.name }}</view>
+				<view class="industryList clear">
+					<view class="industryTag lt {{ subItem.concern ? 'checked' : '' }}" wx:for="{{ item.children }}" wx:for-index="idx" wx:for-item="subItem" wx:key="id" data-parent="{{ item.name }}" data-parentIndex="{{ index }}" data-subIndex="{{ idx }}" data-id="{{ subItem.id }}" catchtap="industryChoose">
+						{{ subItem.name }}
+					</view>
+				</view>
+			</view>			
+		</view>
+	</scroll-view>
+	<view class="industryBtns">
+		<view class="industryBtn cancelIndustryBtn" catchtap="resetChoose">重置</view>
+		<view class="industryBtn submitIndustryBtn" catchtap="submitIndustry">确定</view>
+	</view>
+</view>

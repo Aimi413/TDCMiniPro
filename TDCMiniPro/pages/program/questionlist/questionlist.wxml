@@ -1,0 +1,35 @@
+<view class="questionListBox">
+	<view class="programBox">
+		<view class="container">
+			<view class="programName">{{ topic }}</view>
+			<view class="questionNum" wx:if="{{ questionList.length > 0 }}">共 {{ questionList.length }} 个提问</view>
+			<view class="questionNum" wx:else>本环节暂无提问</view>
+		</view>
+	</view>
+	<view class="questionList">
+		<view class="container">
+			<block wx:if="{{ questionList.length > 0 }}">
+				<questionCard wx:for="{{ questionList }}" wx:key="index" outside-class="{{ index < 3 ? 'yellowBg' : 'grayBg' }}" question="{{ item }}" index="{{ index }}" hideQuestionTime="{{ false }}" hideQuestioner="{{ false }}" hideLikePersonDesc="{{ true }}" bindstarQuestion="starQuestion"></questionCard>
+			</block>
+			<block wx:else>
+				<image class="emptyAsk" src="/imgs/program/emptyAskIcon.png"></image>
+				<view class="emptyDesc">本环节暂无提问</view>
+			</block>
+		</view>
+	</view>
+</view>
+<view class="openAskWin" bindtap="openAskWin">提问</view>
+<navigator class="goDynamic" hover-class="none" url="/pages/plaza/index/index">
+	<image class="goDynamicIcon" src="/imgs/dynamic.png"></image>
+</navigator>
+<view class="dialogWin clear" hidden="{{ hideAskWin }}">
+	<image class="closeDialogWin rt" catchtap="closeWin" src="/imgs/close.svg"></image>
+	<view class="dialogBox">
+		<view class="container">
+			<view class="askInputBox">
+				<textarea class="askInput" placeholder="提问字数限100字" maxlength="100" value="{{ askContent }}" bindinput="inputAsk"></textarea>
+				<button class="submitAsk" bindtap="submitAsk">提问</button>
+			</view>
+		</view>
+	</view>
+</view>

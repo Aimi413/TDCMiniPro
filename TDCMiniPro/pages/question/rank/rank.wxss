@@ -1,0 +1,131 @@
+.rankBox {
+	margin-bottom: 100rpx;
+	padding: 250rpx 0px 0px;
+	background: url("https://img.traveldaily.cn/events/app/2020/questionRankBg.png") top center/100% auto no-repeat;
+}
+.questionCard {
+	margin-bottom: 30rpx;
+	padding: 30rpx;
+	border-radius: 6px;
+	background-color: #ffffff;
+	box-shadow: 0px 15px 20px 0px rgba(0,0,0,0.2);
+}
+.questioner {
+	margin-bottom: 30rpx;
+	font-size: 0px;
+}
+.questionerPhoto, .questionerInfo {
+	display: inline-block;
+	vertical-align: middle;
+}
+.questionerPhoto {
+	width: 50rpx;
+	height: 50rpx;
+	margin-right: 15rpx;
+	border-radius: 100%;
+}
+.questionerInfo {
+	width: calc(100% - 65rpx);
+}
+.questionerName {
+	margin-right: 15rpx;
+	font-size: 28rpx;
+	color: #666666;
+}
+.questionerCompany {
+	font-size: 24rpx;
+	color: #999999;
+}
+.questionInfoBox {
+	font-size: 0px;
+}
+.questionCaret, .questionInfo {
+	display: inline-block;
+	vertical-align: top;
+}
+.questionCaret {
+	width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+    font-size: 24rpx;
+    line-height: 40rpx;
+    text-align: center;
+    border-radius: 2px;
+    background-color: #FFA216;
+    color: #ffffff;
+}
+.questionInfo {
+	width: calc(100% - 60rpx);
+}
+.questionDesc {
+	display: -webkit-box;
+    -webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+    margin-bottom: 30rpx;
+    font-size: 32rpx;
+    line-height: 48rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #000000;
+}
+.proLinkBox {
+	padding-left: 60rpx;
+}
+.proLink {
+	position: relative;
+	max-width: 400rpx;
+	padding-right: 30rpx;
+	font-size: 24rpx;
+	color: #4474E6;
+}
+.proLinkIcon {
+	position: absolute;
+    width: 28rpx;
+    height: 28rpx;
+    right: 0px;
+    top: 6rpx;
+}
+.likeBox {
+	display: flex;
+    align-items: center;
+    padding-left: 40rpx;
+    background-position: left center;
+    background-repeat: no-repeat;
+	background-size: 28rpx 28rpx;
+	background-image: url(https://img.traveldaily.cn/events/app/2020/like2.png);
+    font-size: 24rpx;
+    color: #666666;
+}
+.likeBox.hasStar {
+	background-image: url(https://img.traveldaily.cn/events/app/2020/like3.png);
+}
+.openRuleWin {
+	position: fixed;
+    display: flex;
+    width: 80rpx;
+    height: 80rpx;
+    bottom: 60rpx;
+    right: 20rpx;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.openRuleImg {
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 100%;
+}
+.ruleList {
+	margin-bottom: 80rpx;
+}
+.ruleCaption {
+	margin-bottom: 10rpx;
+	font-size: 32rpx;	
+	font-weight: bold;
+}
+.ruleItem {
+	margin-bottom: 40rpx;
+	font-size: 28rpx;
+	line-height: 58rpx;	
+}

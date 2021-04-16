@@ -1,0 +1,270 @@
+.lt {
+	float: left;
+}
+.rt {
+	float: right;
+}
+.clear::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.ellipsis{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.between {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.postCard {
+	margin-bottom: 60rpx;
+	padding-bottom: 40rpx;
+	border-bottom: 1px solid #E5E5E5;
+}
+.noPadBtom {
+	padding-bottom: 0px;
+}
+.personInfos {
+	margin-bottom: 30rpx;
+}
+.personInfoBox {
+	width: 500rpx;
+	font-size: 0px;
+}
+.personPhoto, .personInfo {
+	display: inline-block;
+	vertical-align: middle;
+}
+.personPhoto {
+	width: 60rpx;
+	height: 60rpx;
+	margin-right: 20rpx;
+	border-radius: 100%;
+}
+.personInfo {
+	width: calc(100% - 80rpx);
+}
+.personName {
+	font-size: 28rpx;
+	font-weight: bold;
+	color: var(--themeColor2);
+}
+.personCompany {
+	font-size: 24rpx;
+	color: #999999;
+}
+.postTime {
+	font-size: 24rpx;
+	color: #CCCCCC;
+}
+.delPost {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 24rpx;
+	color: #666666;
+}
+.delPostIcon {
+	width: 28rpx;
+	height: 28rpx;
+	margin-right: 10rpx;
+}
+.postContent {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	margin-bottom: 30rpx;
+	font-size: 32rpx;
+	line-height: 56rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #000000;
+}
+.question {
+	margin-bottom: 30rpx;
+	font-size: 0px;
+}
+.questionCaret, .questionInfo {
+	display: inline-block;
+	vertical-align: top;
+}
+.questionCaret {
+	width: 40rpx;
+	height: 40rpx;
+	margin: 10rpx 20rpx 0px 0px;
+	font-size: 24rpx;
+	line-height: 40rpx;
+	text-align: center;
+	border-radius: 2px;
+	background-color: #FFA216;
+	color: #ffffff;
+}
+.questionInfo {
+	width: calc(100% - 60rpx);
+}
+.questionDesc {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	font-size: 32rpx;
+	line-height: 56rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #000000;
+}
+.postImg {
+	width: 100%;
+	height: 380rpx;
+	border-radius: 6px;
+}
+.programCard {
+	height: 320rpx;
+	padding: 20rpx;
+	border-radius: 6px;
+}
+.programCard.tdc {
+	background: url("https://img.traveldaily.cn/events/app/2020/program/detailTDCBg.jpg") top center no-repeat;
+	background-size: cover;
+}
+.programCard.hmc {
+	background: url("https://img.traveldaily.cn/events/app/2020/program/detailHMCBg.jpg") top center no-repeat;
+	background-size: cover;
+}
+.programCard.ddc {
+	background: url("https://img.traveldaily.cn/events/app/2020/program/detailDDCBg.jpg") top center no-repeat;
+	background-size: cover;
+}
+.programCard.dta {
+	background: url("https://img.traveldaily.cn/events/app/2020/program/detailDTABg.jpg") top center no-repeat;
+	background-size: cover;
+}
+.proCardHead {
+	margin-bottom: 20rpx;
+}
+.proCardTime, .proTopicType {
+	font-size: 24rpx;
+	color: #ffffff;
+	opacity: 0.7;
+}
+.proTopic {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	min-height: 100rpx;
+	margin-bottom: 54rpx;
+	font-size: 32rpx;
+	font-weight: bold;
+	line-height: 50rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #ffffff;
+}
+.proSpeaker {
+	position: relative;
+	font-size: 0px;
+}
+.proSpeaker.widthAuto {
+	width: 100%;
+}
+.marginLeft {
+	margin-left: 60rpx;
+}
+.proSpeakerType {
+	position: absolute;
+	font-size: 24rpx;
+	line-height: 20rpx;
+	top: -40rpx;
+	left: 0px;
+	white-space: nowrap;
+	opacity: 0.8;
+	color: #ffffff;
+}
+.proSpeakerPhoto, .proSpeakerInfo {
+	display: inline-block;
+	vertical-align: middle;
+}
+.proSpeakerPhoto {
+	width: 65rpx;
+	height: 65rpx;
+	border-radius: 100%;
+}
+.proSpeakerInfo {
+	width: calc(100% - 89rpx);
+	margin-left: 24rpx;
+}
+.proSpeakerName {
+	font-size: 28rpx;
+	color: #ffffff;
+}
+.proSpeakerCompany {
+	font-size: 24rpx;
+	opacity: 0.8;
+	color: #ffffff;
+}
+.followBox {
+	height: 90rpx;
+	background-color: #FFFFFF;
+}
+.followState, .comment, .sharePost {
+	width: 120rpx !important;
+	height: 90rpx;
+	padding-left: 48rpx !important;
+	font-size: 24rpx !important;
+	line-height: 90rpx;
+	text-align: left;
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: 28rpx auto;
+	color: #666666;
+}
+.followState {
+	background-image: url("https://img.traveldaily.cn/events/app/2020/like.png");
+}
+.followState.hasFollow {
+	background-image: url("https://img.traveldaily.cn/events/app/2020/like3.png");
+}
+.comment {
+	background-image: url("https://img.traveldaily.cn/events/app/2020/ask.png");
+}
+.sharePost {
+	margin: 0px !important;
+	font-weight: normal;
+	background-color: #FFFFFF;
+	background-image: url("https://img.traveldaily.cn/events/app/2020/share1.png");
+}
+.commentBox {
+	position: relative;
+	margin: 0px 0px 30rpx;
+	padding: 30rpx;
+	border-radius: 6px;
+	background-color: #F8F8F8;
+}
+.commentBox::after {
+	content: "";
+	position: absolute;
+	display: block;
+	top: -20px;
+	left: 50%;
+	border: 10px solid transparent;
+	border-bottom-color: #f8f8f8;
+	transform: translateX(-50%);
+}
+.commentItem {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	margin-bottom: 15rpx;
+	font-size: 24rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #000000;
+}
+.commentItem:last-child {
+	margin-bottom: 0px;
+}
+.commentator {
+	color: #1652E0;
+}

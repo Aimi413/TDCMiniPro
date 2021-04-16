@@ -1,0 +1,5 @@
+<view class="spkList">
+	<view class="container">
+		<speaker wx:for="{{ speakerList }}" speaker="{{ item }}" profile="{{ profile }}" index="{{ index }}" wx:key="id" bindfollowSpeaker="followSpeaker"></speaker>
+	</view>
+</view>

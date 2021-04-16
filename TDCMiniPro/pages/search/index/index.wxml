@@ -1,0 +1,20 @@
+<view class="searchBox between">
+	<icon class="searchIcon" type="search"></icon>
+	<input class="searchInput" name="keyword" type="text" placeholder="请输入搜索关键字" bindinput="changeKeyWord" />
+	<button class="searchBtn" bindtap="submitSearch">搜索</button>
+</view>
+<view class="resultBox">
+	<view class="resultWrap guestResult {{ searchType == 'guest' ? 'show' : '' }}">
+		<view class="container">
+			<guest outside-class="marginBtom" wx:for="{{ guestList }}" wx:key="id" guest="{{ item }}" bindgoGuestDetail="goGuestDetail"></guest>
+		</view>
+	</view>
+	<view class="resultWrap programResult {{ searchType == 'program' ? 'show' : '' }}">
+		<view class="container">
+			<block wx:for="{{ proList }}" wx:key="id">
+				<view class="proType">{{ item.date }}  {{ item.areaName }}</view>
+				<programCard outside-class="outsideBoxshadow" program="{{ item }}" bindfollowProgram="followProgram"></programCard>
+			</block>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,70 @@
+{
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/sponsor/detail/detail",
+          "pathName": "pages/sponsor/detail/detail",
+          "query": "scene=9167",
+          "scene": 1047
+        },
+        {
+          "name": "pages/speaker/detail/detail",
+          "pathName": "pages/speaker/detail/detail",
+          "query": "scene=1575",
+          "scene": 1047
+        },
+        {
+          "name": "pages/speaker/detail/detail2",
+          "pathName": "pages/speaker/detail/detail",
+          "query": "scene=1575&wxpxt",
+          "scene": 1047
+        },
+        {
+          "name": "pages/speaker/detail/detail3",
+          "pathName": "pages/speaker/detail/detail",
+          "query": "scene=1575&source=pst",
+          "scene": null
+        },
+        {
+          "name": "pages/speaker/detail/detail4",
+          "pathName": "pages/speaker/detail/detail",
+          "query": "scene=1575&source=pst",
+          "scene": 1047
+        },
+        {
+          "name": "pages/speaker/detail/detail5",
+          "pathName": "pages/speaker/detail/detail",
+          "query": "scene=1158_pst",
+          "scene": 1047
+        },
+        {
+          "name": "pages/speaker/detail/detail_sunjie",
+          "pathName": "pages/speaker/detail/detail",
+          "query": "scene=1135_pst",
+          "scene": 1047
+        },
+        {
+          "name": "pages/program/index/index",
+          "pathName": "pages/program/index/index",
+          "query": "scene=xstand",
+          "scene": 1047
+        },
+        {
+          "name": "pages/home/index/index",
+          "pathName": "pages/home/index/index",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

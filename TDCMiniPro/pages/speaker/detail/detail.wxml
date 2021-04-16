@@ -1,0 +1,53 @@
+<view class="speakerBox">
+	<view class="container">
+		<view class="speaker">
+			<image class="speakerPhoto" src="{{ speaker.photo || '/imgs/default.png' }}"></image>
+			<view class="speakerName ellipsis">{{ speaker.name }}</view>
+			<view class="speakerCompany ellipsis">{{ speaker.company }}</view>
+			<view class="speakerJobTitle ellipsis">{{ speaker.jobTitle }}</view>
+		</view>
+		<view class="section intro">
+			<view class="sectionHead">
+				<view class="sectionTitle">嘉宾简介</view>
+			</view>
+			<view id="introBox" class="introBox">
+				<view id="introWrap" class="introWrap">
+					{{ speaker.resume || "未填写" }}
+				</view>
+			</view>
+		</view>
+		<view class="section programBox" wx:if="{{ speaker.programList != null && speaker.programList.length != 0 }}">
+			<view class="sectionHead">
+				<view class="sectionTitle">参与环节</view>
+			</view>
+			<navigator class="program" hover-class="none" wx:for="{{ speaker.programList }}" wx:key="id" url="/pages/program/detail/detail?id={{ item.id }}&type={{ item.belong }}">
+				<view class="programTime">{{ item.date }}  {{ item.begin }} - {{ item.end }}</view>
+				<view class="programTopic">{{ item.topic || item.typeName }}</view>
+			</navigator>
+		</view>		
+	</view>
+</view>
+<view class="operateBox clear">
+	<view class="followSpeaker lt {{ speaker.isSubscribed ? 'hasFollow' : '' }}" data-id="{{ speaker.id }}" data-concern="{{ speaker.isSubscribed }}" catchtap="followSpeaker">
+		{{ speaker.isSubscribed ? '已关注' : '关注' }}
+	</view>
+	<!-- <view class="shareSpeaker lt" data-id="{{ speaker.id }}" catchtap="shareSpeaker">
+		分享
+	</view> -->
+	<button class="shareSpeaker lt" data-id="{{ speaker.id }}" open-type="share">
+		分享
+	</button>
+	<!-- <navigator class="goRegister rt" hover-class="none" wx:if="{{ showRegisterBtn }}" url="/pages/guide/web/web?src=https://event.traveldaily.cn/tdc2020/register">立即报名</navigator> -->
+</view>
+<view class="dialogWin" hidden="{{ hidePoster }}">
+	<scroll-view class="posterBox" scroll-y="true">
+		<image class="posterImg" src="{{ posterImgUrl }}" mode="aspectFit"></image>
+	</scroll-view>
+	<view class="posterTipBox">
+		<view class="posterTip">保存图片，分享给微信朋友吧。</view>
+		<view class="posterBtns">
+			<view class="posterBtn savePoster" catchtap="savePoster">保存</view>
+			<view class="posterBtn cancelBtn" catchtap="cancelPoster">取消</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,91 @@
+.lt {
+	float: left;
+}
+.rt {
+	float: right;
+}
+.clear::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.ellipsis{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.sponsor {
+	padding: 50rpx 0px 0px;
+}
+.sponsorLogo {
+	box-sizing: border-box;
+	width: 150rpx;
+	height: 150rpx;
+	margin-right: 30rpx;
+	border: 1px solid #e5e5e5;
+	border-radius: 4px;
+}
+.sponsorInfos {
+	width: calc(100% - 180rpx);
+	padding-bottom: 50rpx;
+	border-bottom: 1px solid #E5E5E5;
+}
+.sponsorName {
+	margin-bottom: 36rpx;
+	font-size: 36rpx;
+	color: #000000;
+}
+.sponsorIntro {
+	margin-bottom: 30rpx;
+	font-size: 28rpx;
+	color: #666666;
+}
+.sponsorIntro:empty {
+	margin-bottom: 0px;
+}
+.sponsorTag {
+	height: 40rpx;
+	padding: 0px 15rpx;
+	font-size: 24rpx;	
+	line-height: 40rpx;
+	border-radius: 10px;
+	background-color: #F5F5F5;
+	color: #999999;
+}
+.sponsorBooth {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 24rpx;
+	color: #666666;
+}
+.boothIcon {
+	width: 28rpx;
+	height: 28rpx;
+	margin-right: 15rpx;
+}
+.operateBox {
+	margin-top: 50rpx;
+}
+.concernState, .shareSponsor {
+	width: 120rpx !important;	
+	padding-left: 40rpx !important;
+	background-size: 28rpx auto;
+	background-position: left center;
+	background-repeat: no-repeat;
+	font-size: 24rpx !important;
+	text-align: left;
+	color: #666666;
+}
+.concernState {
+	margin-right: 130rpx;
+	background-image: url("https://img.traveldaily.cn/events/app/2020/star1.png");
+}
+.concernState.isConcern {
+	background-image: url("https://img.traveldaily.cn/events/app/2020/star2.png");
+}
+.shareSponsor {
+	font-weight: normal;
+	background-image: url("https://img.traveldaily.cn/events/app/2020/share1.png");
+	background-color: #ffffff;
+}

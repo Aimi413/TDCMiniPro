@@ -1,0 +1,22 @@
+<view class="questionCard outside-class" bindtap="goQuestionDetail">
+	<view class="questioner" hidden="{{ hideQuestioner }}">
+		<image class="questionerPhoto" src="{{ question.userPhoto }}" mode="aspectFill"></image>
+		<view class="questionerName ellipsis">
+			{{ question.userName }} <text class="questionerCompany" wx:if="{{ question.userCompany }}">{{ question.userCompany }}</text>
+		</view>
+	</view>
+	<view class="questionBody">
+		<view class="questionCaret">问</view>
+		<view class="questionInfo">
+			<view class="questionDesc">{{ question.content }}</view>
+			<view class="questionLikeBox">
+				<view class="questionTime" hidden="{{ hideQuestionTime }}">提问于{{ question.postTime }}</view>
+				<view class="likeDesc {{ hideLikePersonDesc ? 'clickable' : 'unClickable' }} {{  question.isLike ? 'liked' : '' }}" catchtap="starQuestion">
+					<!-- <image class="likeIcon" wx:if="{{ hideLikePersonDesc }}" src="/imgs/like2.png"></image>
+					<image class="likeIcon" wx:else="{{ !hideLikePersonDesc }}" src="/imgs/like.png"></image> -->
+					{{ question.likeCount }} <text class="likePersonDesc" hidden="{{ hideLikePersonDesc }}">人表示很赞</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

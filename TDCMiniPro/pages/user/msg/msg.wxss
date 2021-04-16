@@ -1,0 +1,44 @@
+.msgBox {
+	margin: 30rpx 0px;
+}
+.msgCard {
+	position: relative;
+	box-sizing: border-box;
+	margin-bottom: 30rpx;
+	padding: 30rpx;
+	border-radius: 6px;
+	background-color: #F8F8F8;
+}
+.msgTime {
+	margin-bottom: 35rpx;
+	font-size: 24rpx;
+	color: #CCCCCC;
+}
+.msgCaption {
+	margin-bottom: 30rpx;
+	font-size: 36rpx;
+	font-weight: bold;
+	color: #252525;
+}
+.msgContent {
+	margin-bottom: 30rpx;
+	font-size: 28rpx;
+	line-height: 42rpx;
+	color: #666666;
+}
+.goDetailLink {
+	font-size: 28rpx;
+	color: #1652E0;
+}
+.goDetailLinkIcon {
+	display: inline-block;
+	vertical-align: middle;
+	width: 28rpx;
+	height: 28rpx;
+}
+.emptyDesc {
+	margin: 200rpx auto 0px;
+	font-size: 28rpx;
+	text-align: center;
+	color: #999999;
+}

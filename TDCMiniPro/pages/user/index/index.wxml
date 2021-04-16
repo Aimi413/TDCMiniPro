@@ -1,0 +1,90 @@
+<view class="profile">
+	<view class="container">
+		<view class="profileCard colorBor">
+			<view class="profileInfos">
+				<view class="profileInfo">
+					<view class="profileName ellipsis">{{ profile.name }}</view>
+					<view class="profileCompany">{{ profile.company + " " + profile.jobTitle }}</view>
+				</view>
+				<image class="profileAvatar" mode="aspectFill" src="{{ profile.photo ||  '/imgs/default.png' }}"></image>
+			</view>
+			<view class="profileContacts">
+				<view class="profileContact ellipsis">
+					<image class="contactIcon" src="/imgs/user/profileMobile.png"></image>
+					{{ profile.mobile || '未填写' }}
+				</view>
+				<view class="profileContact ellipsis">
+					<image class="contactIcon" src="/imgs/user/profileEmail.png"></image>
+					{{ profile.email || '未填写' }}
+				</view>
+				<view class="profileContact ellipsis">
+					<image class="contactIcon" src="/imgs/user/profileWexin.png"></image>
+					{{ profile.wechat || '未填写' }}
+				</view>
+			</view>
+			<navigator class="goEditPage" hover-class="none" url="/pages/user/profile/profile">
+				<image class="goEditIcon" src="/imgs/user/profileEdit.png"></image>
+				编辑
+			</navigator>
+		</view>
+		<view class="profileIntro">
+			{{ profile.intro || '您还未填写个人简介，点击编辑按钮，即可完善资料。' }}
+		</view>
+		<view class="profileMenus">
+			<navigator class="profileMenu clear" hover-class="none" url="/pages/user/msg/msg">
+				<image class="menuIcon lt" src="/imgs/user/menu1.png"></image>
+				<view class="menuText lt">我的消息</view>
+				<image class="goMenuIcon rt" src="/imgs/home/rightArrow.svg"></image>
+				<view class="menuMsg rt" wx:if="{{ profile.newMessageCount > 0 }}">{{ profile.newMessageCount }}</view>
+			</navigator>
+			<navigator class="profileMenu clear" hover-class="none" wx:if="{{ profile.role == 2 || profile.role == 4 || profile.role == 9 || profile.role == 1 }}" url="/pages/user/passcode/passcode">
+				<image class="menuIcon lt" src="/imgs/user/menu7.png"></image>
+				<view class="menuText lt">通行码</view>
+				<image class="goMenuIcon rt" src="/imgs/home/rightArrow.svg"></image>
+			</navigator>
+			<navigator class="profileMenu clear" hover-class="none" wx:if="{{ profile.role == 2 || profile.role == 4 || profile.role == 9 || profile.role == 10 }}" url="/pages/user/recent/recent">
+				<image class="menuIcon lt" src="/imgs/user/menu2.png"></image>
+				<view class="menuText lt">最近联系的人</view>
+				<image class="goMenuIcon rt" src="/imgs/home/rightArrow.svg"></image>
+			</navigator>
+			<navigator class="profileMenu clear" hover-class="none" wx:if="{{ profile.role == 2 || profile.role == 4 || profile.role == 9 || profile.role == 10 }}" url="/pages/user/question/question">
+				<image class="menuIcon lt" src="/imgs/user/menu3.png"></image>
+				<view class="menuText lt">我的提问</view>
+				<image class="goMenuIcon rt" src="/imgs/home/rightArrow.svg"></image>
+			</navigator>
+			<navigator class="profileMenu clear" hover-class="none" wx:if="{{ profile.role == 2 || profile.role == 4 || profile.role == 9 || profile.role == 10 }}" url="/pages/user/concern/concern">
+				<image class="menuIcon lt" src="/imgs/user/menu4.png"></image>
+				<view class="menuText lt">我的关注</view>
+				<image class="goMenuIcon rt" src="/imgs/home/rightArrow.svg"></image>
+			</navigator>
+			<view class="menuDivide"></view>
+			<navigator class="profileMenu clear" hover-class="none" url="/pages/user/privacy/privacy">
+				<image class="menuIcon lt" src="/imgs/user/menu5.png"></image>
+				<view class="menuText lt">隐私设置</view>
+				<image class="goMenuIcon rt" src="/imgs/home/rightArrow.svg"></image>
+			</navigator>
+			<view class="profileMenu clear" bindtap="openServinceWin">
+				<image class="menuIcon lt" src="/imgs/user/menu8.png"></image>
+				<view class="menuText lt">联系客服</view>
+				<image class="goMenuIcon rt" src="/imgs/home/rightArrow.svg"></image>
+			</view>
+			<view class="profileMenu clear" bindtap="loginOut">
+				<image class="menuIcon lt" src="/imgs/user/menu6.png"></image>
+				<view class="menuText lt">退出登录</view>
+				<image class="goMenuIcon rt" src="/imgs/home/rightArrow.svg"></image>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="dialogWin" hidden="{{ hideDataTip }}">
+	<image class="dataTip" src="/imgs/user/dataTip.png"></image>
+	<view class="closeDataTip" catchtap="closeDataTip">我知道了</view>
+</view>
+<view class="dialogWin" hidden="{{ hideServinceWin }}">
+	<image class="closeDialogWin rt" catchtap="closeDataTip" src="/imgs/close.svg"></image>
+	<view class="servinceBox">
+		<view class="servinceTitle">联系客服</view>
+		<view class="servinceDesc">如有疑问，请联系客服：<text class="phoneNum" data-phone="18221554542" catchtap="makePhone">18221554542</text>（微信同号）</view>
+		<view class="servinceDesc">如果您正在活动现场，建议您前往签到处6号通道，咨询现场工作人员。</view>
+	</view>
+</view>

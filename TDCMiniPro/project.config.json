@@ -1,0 +1,116 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": false,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.13.1",
+  "appid": "wx06706e463a355f7f",
+  "projectname": "TDC%E6%97%85%E8%AE%AF%E5%B3%B0%E4%BC%9A%E5%B0%8F%E7%A8%8B%E5%BA%8F",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/sponsor/detail/detail",
+          "pathName": "pages/sponsor/detail/detail",
+          "query": "scene=9167",
+          "scene": 1047
+        },
+        {
+          "name": "pages/speaker/detail/detail",
+          "pathName": "pages/speaker/detail/detail",
+          "query": "scene=1575",
+          "scene": 1047
+        },
+        {
+          "name": "pages/speaker/detail/detail2",
+          "pathName": "pages/speaker/detail/detail",
+          "query": "scene=1575&wxpxt",
+          "scene": 1047
+        },
+        {
+          "name": "pages/speaker/detail/detail3",
+          "pathName": "pages/speaker/detail/detail",
+          "query": "scene=1575&source=pst",
+          "scene": null
+        },
+        {
+          "name": "pages/speaker/detail/detail4",
+          "pathName": "pages/speaker/detail/detail",
+          "query": "scene=1575&source=pst",
+          "scene": 1047
+        },
+        {
+          "name": "pages/speaker/detail/detail5",
+          "pathName": "pages/speaker/detail/detail",
+          "query": "scene=1158_pst",
+          "scene": 1047
+        },
+        {
+          "name": "pages/speaker/detail/detail_sunjie",
+          "pathName": "pages/speaker/detail/detail",
+          "query": "scene=1135_pst",
+          "scene": 1047
+        },
+        {
+          "name": "pages/program/index/index",
+          "pathName": "pages/program/index/index",
+          "query": "scene=xstand",
+          "scene": 1047
+        }
+      ]
+    }
+  }
+}

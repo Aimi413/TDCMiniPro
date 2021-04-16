@@ -1,0 +1,49 @@
+.colorBor {
+	border: 2px solid;
+	border-color: #4474E6 #EF4A5B #EF4A5B #4474E6;
+}
+.ellipsis{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.guest {
+	position: relative;
+	padding: 30rpx;
+	border-radius: 4px;
+	background: url("https://img.traveldaily.cn/events/app/2020/user/recentCardBg.png") top center no-repeat;
+	background-size: cover;
+	font-size: 0px;	
+}
+.newMsgDot {
+	position: absolute;
+	width: 28rpx;
+	height: 28rpx;
+	top: 10rpx;
+	right: 24rpx;
+	border-radius: 100%;
+	background-color: #EF4A5B;
+}
+.guestInfo, .guestPhoto {
+	display: inline-block;
+	vertical-align: middle;
+}
+.guestInfo {
+	width: calc(100% - 226rpx);
+}
+.guestName {
+	margin-bottom: 30rpx;
+	font-size: 44rpx;
+	font-weight: bold;
+	color: var(--themeColor2);
+}
+.guestCompany {
+	font-size: 24rpx;
+	color: #666666;
+}
+.guestPhoto {
+	width: 156rpx;
+	height: 156rpx;
+	margin-left: 70rpx;
+	border-radius: 100%;
+}

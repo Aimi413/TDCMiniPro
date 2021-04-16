@@ -1,0 +1,120 @@
+<view class="postDetail">
+	<view class="container">
+		<navigator wx:if="{{ post.socialId != -1 }}" class="postPerson" hover-class="none" url="/pages/guest/detail/detail?id={{ post.socialId }}">
+			<image class="postPersonPhoto" src="{{ post.socialId == -1 ? '/imgs/seriesTDC_cn.jpg' : post.socialPhoto }}" mode="aspectFill"></image>
+			<view class="postPersonInfo">
+				<view class="postPersonName ellipsis">{{ post.socialName }}</view>
+				<view class="postPersonCompany ellipsis">{{ post.socialCompany }}</view>
+			</view>
+		</navigator>
+		<view wx:else class="postPerson">
+			<image class="postPersonPhoto" src="{{ post.socialId == -1 ? '/imgs/seriesTDC_cn.jpg' : post.socialPhoto }}" mode="aspectFill"></image>
+			<view class="postPersonInfo">
+				<view class="postPersonName ellipsis">{{ post.socialName }}</view>
+				<view class="postPersonCompany ellipsis">{{ post.socialCompany }}</view>
+			</view>
+		</view>
+		<view class="postContent"><text user-select="true">{{ post.content }}</text></view>
+		<image class="postImg" wx:if="{{ post.image != '' }}" src="{{ post.image }}" data-img="{{ post.image }}" mode="widthFix" catchtap="previewImg"></image>
+		<view class="postTime">{{ post.time }}</view>
+		<view class="comments" wx:if="{{ post.commentList.length != 0 && post.commentList != null }}">
+			<view class="commentsCaption">全部评论</view>
+			<view class="commentItem" wx:for="{{ post.commentList }}" wx:for-item="commentItem" wx:for-index="commentItemIndex" wx:key="id" data-item="{{ commentItem }}" bindtap="openCommentDetailWin">
+				<image class="commentatorPhoto" src="{{ commentItem.socialPhoto }}" mode="aspectFill"></image>
+				<view class="commentItemInfos">
+					<view class="commentatorInfo">
+						<view class="commentatorName ellipsis">{{ commentItem.socialName }}</view>
+						<view class="commentatorCompany ellipsis">{{ commentItem.socialCompany }}</view>
+					</view>
+					<view class="commentItemContent">{{ commentItem.content }}</view>
+					<view class="commentItemSummary between">
+						<view class="commentItemTime">{{ commentItem.postTime }}</view>
+						<view class="commentItemOperates between">
+							<view class="commentItemOperate reply" data-item="{{ commentItem }}" data-type="reply" catchtap="openInputWin">
+								{{ commentItem.replyList.length > 0 ? commentItem.replyList.length : '回复' }}
+							</view>
+							<view class="commentItemOperate star {{ commentItem.isLike ? 'hasStar' : '' }}" data-item="{{ commentItem }}" catchtap="starComment">
+								{{ commentItem.like > 0 ? commentItem.like : '点赞' }}
+							</view>
+						</view>
+					</view>
+					<view class="replyBox" wx:if="{{ commentItem.replyList.length > 0 }}">
+						<view class="replyItem" wx:for="{{ commentItem.replyList }}" wx:for-item="replyItem" wx:for-index="replyIndex" wx:key="id" wx:if="{{ replyIndex < 3 }}">
+							<text class="replyName">{{ replyItem.socialName }}：</text>
+							<text class="replyContent">{{ replyItem.content }}</text>
+						</view>
+					</view>
+					<view class="moreReplyTip" wx:if="{{ commentItem.replyList.length > 3 }}">更多评论</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="simulateComment" wx:if="{{ post != null }}">
+	<view class="openInputWin" data-type="comment" catchtap="openInputWin">发表你的观点...</view>
+	<view class="toolsItem toolsStar {{ post.isLike ? 'hasStar' : '' }}" data-id="{{ post.id }}" data-likeCount="{{ post.likeCount }}" data-islike="{{ post.isLike }}" catchtap="starPost">
+		<view class="toolsBadge" wx:if="{{ post.likeCount > 0 }}">{{ post.likeCount }}</view>
+	</view>
+	<view class="toolsItem toolsComment" data-type="comment" catchtap="openInputWin">
+		<view class="toolsBadge" wx:if="{{ post.commentList.length > 0 }}">{{ post.commentList.length >= 100 ? '99+' : post.commentList.length }}</view>
+	</view>
+	<button class="toolsItem toolsSharePost" open-type="share"></button>
+</view>
+<view class="dialogWin clear" hidden="{{ hideCommentDetailWin }}">
+	<image class="closeDialogWin rt" catchtap="closeCommentDetailWin" src="/imgs/close.svg"></image>
+	<scroll-view class="dialogBox" scroll-y="true">
+		<view class="container">
+			<view class="commentItem">
+				<image class="commentatorPhoto" src="{{ showCommentItem.socialPhoto }}" mode="aspectFill" data-id="{{ showCommentItem.socialId }}" catchtap="goReplyGuestDetail"></image>
+				<view class="commentItemInfos">
+					<view class="commentatorInfo" data-id="{{ showCommentItem.socialId }}" catchtap="goReplyGuestDetail">
+						<view class="commentatorName ellipsis">{{ showCommentItem.socialName }}</view>
+						<view class="commentatorCompany ellipsis">{{ showCommentItem.socialCompany }}</view>
+					</view>
+					<view class="commentItemContent">{{ showCommentItem.content }}</view>
+					<view class="commentItemSummary between">
+						<view class="commentItemTime">{{ showCommentItem.postTime }}</view>
+						<view class="commentItemOperates between">
+							<view class="commentItemOperate reply" data-type="reply" data-item="{{ showCommentItem }}" bindtap="openInputWin">
+								{{ commentItem.replyList.length > 0 ? commentItem.replyList.length : '回复' }}
+							</view>
+							<view class="commentItemOperate star {{ showCommentItem.isLike ? 'hasStar' : '' }}" data-item="{{ showCommentItem }}" bindtap="starComment">
+								{{ showCommentItem.like > 0 ? showCommentItem.like : '点赞' }}
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="showedReplyList" wx:if="{{ showCommentItem.replyList.length > 0 }}">
+				<view class="replyCaption">{{ showCommentItem.replyList.length }} 条回复</view>
+				<view class="commentItem" wx:for="{{ showCommentItem.replyList }}" wx:key="id">
+					<image class="commentatorPhoto" src="{{ item.socialPhoto }}" mode="aspectFill" data-id="{{ item.socialId }}" catchtap="goReplyGuestDetail"></image>
+					<view class="commentItemInfos">
+						<view class="commentatorInfo" data-id="{{ item.socialId }}" catchtap="goReplyGuestDetail">
+							<view class="commentatorName ellipsis">{{ item.socialName }}</view>
+							<view class="commentatorCompany ellipsis">{{ item.socialCompany }}</view>
+						</view>
+						<view class="commentItemContent">{{ item.content }}</view>
+						<view class="commentItemSummary between">
+							<view class="commentItemTime">{{ item.postTime }}</view>
+						</view>					
+					</view>
+				</view>
+			</view>
+		</view>
+	</scroll-view>
+</view>
+<view class="dialogWin clear" hidden="{{ hideInputWin }}">
+	<image class="closeDialogWin rt" catchtap="closeInputWin" src="/imgs/close.svg"></image>
+	<scroll-view class="dialogBox">
+		<view class="container">
+			<view class="commentInputBox">
+				<textarea class="commentInput" placeholder="发表你的观点..." maxlength="-1" value="{{ commentInputVal }}" bindinput="inputComment"></textarea>
+				<view class="commentBtns between">
+					<button class="commentBtn cancelComment" bindtap="closeInputWin">取消</button>
+					<button class="commentBtn submitComment" bindtap="submitComment">发布</button>
+				</view>
+			</view>
+		</view>
+	</scroll-view>
+</view>

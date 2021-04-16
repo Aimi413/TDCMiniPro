@@ -1,0 +1,18 @@
+<view class="speaker outside-class">
+	<view class="speakerInfos" bindtap="goSpeakerDetail">
+		<image class="speakerPhoto" src="{{ speaker.photo }}"></image>
+		<view class="speakerInfo">
+			<view class="speakerName ellipsis">{{ speaker.name }}</view>
+			<view class="speakerCompany ellipsis">{{ speaker.company + " " + speaker.jobTitle }}</view>
+		</view>
+	</view>
+	<view class="followBox between">
+		<view class="followState {{ speaker.isSubscribed ? 'hasFollow' : '' }}" data-id="{{ speaker.id }}" catchtap="followSpeaker">
+			{{ speaker.isSubscribed ? '已关注' : '关注' }}
+		</view>
+		<!-- <view class="shareSpeaker" data-id="{{ speaker.id }}" catchtap="shareSpeaker">分享</view> -->
+		<button class="shareSpeaker lt" data-id="{{ speaker.id }}" data-type="speaker" open-type="share">
+			分享
+		</button>
+	</view>
+</view>

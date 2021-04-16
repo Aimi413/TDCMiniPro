@@ -1,0 +1,73 @@
+<view class="login">
+	<view class="loginBox">
+		<view class="loginLogo">
+			<image class="loginLogoImg" src="/imgs/user/logo.png"></image>
+		</view>
+		<view class="login-wechatPhone">
+			<button open-type="getPhoneNumber" bindgetphonenumber="getPhone" class="wechatPhone" style="width:100%;">
+				<image src="/imgs/user/icon-wechat.png"></image>
+				<text>微信快捷登录</text>
+			</button>
+			<view class="login-wechatPhoneTips">*本系统仅供【已报名嘉宾及展商】登录使用，请确认您微信绑定的手机号/邮箱与报名时提交的资料一致</view>
+		</view>
+		<view class="login-rests">
+			<text>其他方式登录</text>
+		</view>
+		<view class="login-other between">
+			<view class="login-otherItem" bindtap="showLoginForm">
+				<image src="/imgs/user/icon-phone.png"></image>
+				<text>报名手机登录</text>
+			</view>
+			<view class="login-otherItem" bindtap="showLoginForm">
+				<image src="/imgs/user/icon-email.png"></image>
+				<text>报名邮箱登录</text>
+			</view>
+		</view>
+	</view>
+
+	<view class="copy">
+		<text>Copyright ©2006-2020 TravelDaily All Rights Reserved</text>
+		<text>环球旅讯 版权所有</text>
+	</view>
+</view>
+<view class="loginWin" hidden="{{ hideLoginForm }}">
+	<view class="loginWinBox">
+		<!-- <view class="closeLoginWin" bindtap="hideForm">
+			<icon type="clear" size="24" color="#666666"></icon>
+		</view> -->
+		<view class="loginLogo">
+			<image class="loginLogoImg" src="/imgs/user/logo.png"></image>
+		</view>
+		<form class="loginForm" bindsubmit="handleLogin">
+			<view class="formGroup">
+				<input class="formInput" name="account" placeholder="请输入报名时提交的手机号/邮箱" bindinput="inputAccountVal"></input>
+				<view class="formTip" hidden="{{ hideAccountTip }}">{{ accountTip }}</view>
+			</view>
+			<view class="formGroup clear">
+				<input class="formInput valicodeInput lt" type="number" name="code" placeholder="请输入验证码" bindinput="hideTip"></input>
+				<button class="getValicodeBtn rt"  disabled="{{ disabledGetCode }}" bindtap="getCode">{{ codeBtnTxt }}</button>
+				<view class="formTip" hidden="{{ hideValicodeTip }}">{{ valicodeTip }}</view>
+			</view>
+			<view class="formGroup">
+				<button class="loginBtn" disabled="{{ disabledLogin }}" form-type="submit">登录</button>
+			</view>
+		</form>
+		<view class="cantLoginTip">
+			如有疑问，请联系客服：<text class="phoneNum" catchtap="makePhone" data-phone="18221554542">18221554542</text>（微信号：TravelDaily2020）。
+			如果您正在活动现场，建议您前往签到处6号通道，咨询现场工作人员。
+			<!-- <button open-type="contact" class="popup-noLoginBtn">无法登陆，联系我们</button> -->
+		</view>
+	</view>
+</view>
+<view class="dialogWin clear" hidden="{{ hideCantLoginTip }}">
+	<image class="closeDialogWin rt" catchtap="closeCantLoginWin" src="/imgs/close.svg"></image>
+	<view class="cantLoginTipBox">
+		<view class="cantLoginTipCaption">提示</view>
+		<view class="cantLoginTipDesc">{{ cantLoginTipText }}如有疑问，请联系客服：<text class="phoneNum" catchtap="makePhone" data-phone="18221554542">18221554542</text>（微信号：TravelDaily2020）。
+			如果您正在活动现场，建议您前往签到处6号通道，咨询现场工作人员。</view>
+		<view class="cantLoginTipBtns between">
+			<view class="cantLoginTipBtn" catchtap="closeCantLoginWin">取消</view>
+			<view class="cantLoginTipBtn goFeedBackBtn" catchtap="goFeedBack">提交反馈</view>
+		</view>
+	</view>
+</view>

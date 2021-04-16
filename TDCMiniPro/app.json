@@ -1,0 +1,67 @@
+{
+  "pages":[   
+
+    "pages/home/index/index",
+
+    "pages/guest/index/index",
+    "pages/guest/list/list",
+    "pages/guest/detail/detail",
+
+    "pages/speaker/index/index",
+    "pages/speaker/detail/detail",
+
+    "pages/sponsor/index/index",
+    "pages/sponsor/detail/detail",
+
+    "pages/guide/web/web",
+
+    "pages/program/index/index",
+    "pages/program/detail/detail",
+    "pages/program/question/question",
+    "pages/program/questionlist/questionlist",
+    
+    "pages/plaza/index/index",
+
+    "pages/plaza/detail/detail",
+    "pages/plaza/publish/publish",
+
+    "pages/user/login/login",
+    "pages/user/index/index",
+    "pages/user/profile/profile",
+    "pages/user/edit/edit",
+    "pages/user/msg/msg",
+    "pages/user/question/question",
+    "pages/user/recent/recent",
+    "pages/user/passcode/passcode",
+    "pages/user/concern/concern",
+    "pages/user/privacy/privacy",
+    "pages/user/feedback/feedback",
+
+    "pages/question/rank/rank",
+    
+    "pages/search/index/index",
+
+    "pages/getopenid/getopenid",
+    "pages/pay/pay"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#123376",
+    "navigationBarTitleText": "旅讯峰会",
+    "navigationBarTextStyle":"white"
+  },
+  "usingComponents": {
+    "guest": "/components/guest/guest",
+    "sponsor": "/components/sponsor/sponsor",
+    "guestCard": "/components/guestCard/guestCard",
+    "speaker": "/components/speaker/speaker",
+    "programCard": "/components/programCard/programCard",
+    "questionCard": "/components/questionCard/questionCard",
+    "postCard": "/components/postCard/postCard"
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wxebadf544ddae62cb"
+  ],
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

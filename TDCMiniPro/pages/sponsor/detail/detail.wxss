@@ -1,0 +1,286 @@
+.sponsorBox {
+	padding: 50rpx 0px 250rpx;
+	background: url("https://img.traveldaily.cn/events/app/2020/user/profileTopBg.png") top center/100% auto no-repeat;
+	overflow: hidden;
+}
+.sponsorCard{
+	box-sizing: border-box;
+	margin-bottom: 70rpx;
+	padding: 40rpx 30rpx;
+	border-radius: 6px;
+	background-color: #ffffff;
+	box-shadow: 0px 15px 20px 0px rgba(18,51,118,0.15); 
+	overflow: hidden;
+}
+.sponsorInfos {
+	width: calc(100% - 230rpx);
+}
+.sponsorName {
+	margin-bottom: 30rpx;
+	font-size: 52rpx;
+	font-weight: bold;
+	color: #000000;
+}
+.sponsorIntro {	
+	font-size: 28rpx;
+	color: #999999;
+}
+.sponsorTags {
+	margin: 40rpx 0px 0px;
+}
+.sponsorTag {
+	margin: 0px 16rpx 16rpx 0px;
+	padding: 0px 15rpx;
+	font-size: 24rpx;
+	line-height: 40rpx;
+	border-radius: 10px;
+	background-color: #F5F5F5;
+	color: #999999;
+}
+.sponsorLogo {
+	width: 150rpx;
+	margin-left: 80rpx;
+}
+.sponsorLogoImg {
+	width: 150rpx;
+	height: 150rpx;
+	margin-bottom: 18rpx;
+	border-radius: 4px;
+	box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.16); 
+}
+.memberTag {
+	width: 150rpx;
+	height: 32rpx;
+	margin: 0px auto;
+}
+.sponsorBooth {
+	clear: both;
+	display: flex;
+	align-items: center;
+	padding-top: 30rpx;
+	font-size: 32rpx;
+	color: #000000;
+}
+.boothIcon {
+	width: 32rpx;
+	height: 32rpx;
+	margin-right: 24rpx;
+}
+.section {
+	margin-bottom: 40rpx;
+	padding-bottom: 70rpx;
+	border-bottom: 1px solid #E5E5E5;
+}
+.section:last-child {
+	border-bottom: 0px;
+}
+.sectionHead {
+	margin-bottom: 36rpx;
+}
+.sponsorIntro {
+	font-size: 28rpx;
+	line-height: 48rpx;
+	color: #000000;
+}
+.goYellowPage {
+	width: 230rpx;
+	height: 70rpx;
+	margin: 50rpx auto 0px;
+	font-size: 28rpx;
+	line-height: 70rpx;
+	text-align: center;
+	background-color: #F8F8F8;
+	color: #000000;
+}
+.eventImg {
+	width: 100%;
+	height: 330rpx;
+	margin-bottom: 36rpx;
+	border-radius: 6px;
+}
+.eventName {
+	margin-bottom: 36rpx;
+	font-size: 32rpx;
+	color: #000000;
+}
+.eventTime, .eventSite {
+	font-size: 28rpx;
+	line-height: 54rpx;
+	color: #999999;
+}
+.product {
+	margin-bottom: 36rpx;
+	font-size: 0px;
+}
+.product:last-child {
+	margin-bottom: 0px;
+}
+.productLogo, .productInfos {
+	display: inline-block;
+	vertical-align: middle;
+}
+.productLogo {
+	width: 200rpx;
+	height: 200rpx;
+	margin-right: 28rpx;
+}
+.productInfos {
+	width: calc(100% - 228rpx);
+	padding-bottom: 36rpx;
+	border-bottom: 1px solid #E5E5E5;
+}
+.product:last-child .productInfos {
+	border-bottom: 0px;
+}
+.productName {
+	margin-bottom: 32rpx;
+	font-size: 32rpx;
+	color: #252525;
+}
+.productSummary {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	font-size: 28rpx;
+	line-height: 48rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #999999;
+}
+
+.contactCard {
+	box-sizing: border-box;
+	padding: 40rpx 30rpx;
+	border-radius: 6px;
+	background-color: #F8F8F8;
+	overflow: hidden;
+}
+.contactItem:not(:last-child) {
+	margin-bottom: 40rpx;
+}
+.contactCaption, .contactVal {
+	font-size: 28rpx;
+}
+.contactCaption {
+	color: #999999;
+}
+.contactVal {
+	color: #000000;
+}
+.attend {
+	margin-bottom: 70rpx;
+	font-size: 0px;
+}
+.attendPhoto, .attendInfos {
+	display: inline-block;
+	vertical-align: middle;
+}
+.attendPhoto {
+	width: 106rpx;
+	height: 106rpx;
+	margin-right: 20rpx;
+	border-radius: 100%;
+}
+.attendInfos {
+	width: calc(100% - 126rpx);
+}
+.attendName {
+	margin-bottom: 24rpx;
+	font-size: 36rpx;
+	color: #000000;
+}
+.isContactTag {
+	padding: 0px 10rpx;
+	font-size: 24rpx;
+	line-height: 40rpx;
+	border-radius: 10px;
+	background-color: #4474E6;
+	color: #ffffff;
+}
+.attendCompany {
+	font-size: 28rpx;
+	color: #999999;
+}
+.operateBox {
+	position: fixed;
+	bottom: 60rpx;
+	right: 20rpx;
+}
+.followSponsor, .shareSponsor {
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 108rpx !important;
+	height: 108rpx;
+	padding-top: 60rpx !important;
+	font-size: 20rpx !important;
+	border-radius: 4px;
+	background-color: var(--themeColor2);
+	background-position: top 20rpx center;
+	background-repeat: no-repeat;
+	background-size: auto 40rpx;
+	color: #FFFFFF;
+}
+.followSponsor {
+	margin-right: 20rpx;
+	background-image: url("https://img.traveldaily.cn/events/app/2020/star3.png");
+}
+.followSponsor.hasFollow {
+	background-image: url("https://img.traveldaily.cn/events/app/2020/star2.png");
+}
+.shareSponsor {
+	font-weight: normal;
+	background-image: url("https://img.traveldaily.cn/events/app/2020/share2.png");
+}
+.goRegister {
+	width: 300rpx;
+	height: 108rpx;
+	margin-left: 20rpx;
+	font-size: 36rpx;
+	line-height: 108rpx;
+	text-align: center;
+	border-radius: 4px;
+	background-color: var(--themeColor);
+	color: #ffffff;
+}
+.showProName {
+	margin-bottom: 40rpx;
+	font-size: 38rpx;
+	font-weight: bold;
+	color: #000000;
+}
+.showProIntro {
+	margin-bottom: 50rpx;
+	font-size: 28rpx;
+	line-height: 48rpx;
+	color: #666666;
+}
+.showProImg {
+	width: 100%;
+	height: 680rpx;
+	margin: 0px auto 50rpx;
+}
+.showEventImg {
+	width: 100%;
+	height: 330rpx;
+	margin-bottom: 36rpx;
+	border-radius: 6px;
+}
+.showEventName {
+	margin-bottom: 48rpx;
+	font-size: 38rpx;
+	font-weight: bold;
+	color: #000000;
+}
+.showEventLabel {
+	margin-bottom: 24rpx;
+	font-size: 28rpx;
+	color: #999999;
+}
+.showEventTime, .showEventSite, .showEventIntro {
+	margin-bottom: 48rpx;
+	font-size: 28rpx;
+	line-height: 48rpx;
+	color: #000000;
+}

@@ -1,0 +1,126 @@
+.lt {
+	float: left;
+}
+.rt {
+	float: right;
+}
+.clear::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.between {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+  }
+.ellipsis{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.programCard {
+	border-radius: 6px;
+	overflow: hidden;
+}
+.proCardHead {	
+	display: flex;
+	height: 208rpx;
+	padding: 30rpx;
+	flex-wrap: wrap;
+	align-content: space-between;
+	background: url("https://img.traveldaily.cn/events/app/2020/speaker/programBg1.png") left center no-repeat;
+	background-size: 100% 100%;
+}
+.proTimeBox {
+	width: 100%;
+}
+.proTime {
+	font-size: 24rpx;
+	color: #999999;
+}
+.doingIcon {
+	width: 56rpx;
+	height: 28rpx;
+}
+.proTopic {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	font-size: 36rpx;
+	font-weight: bold;
+	line-height: 54rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.proCardBody {	
+	padding: 30rpx;
+	border-bottom: 1px solid #E5E5E5;
+	background-color: #FFFFFF;
+}
+.speakerType {
+	margin-bottom: 30rpx;
+	font-size: 24rpx;
+	color: #999999;
+}
+.goSpeakerDetail {
+	margin-bottom: 30rpx;
+	font-size: 0px;
+}
+.speakerAvatar, .speakerInfos {
+	display: inline-block;
+	vertical-align: middle;
+}
+.speakerAvatar {
+	width: 80rpx;
+	height: 80rpx;
+	margin-right: 30rpx;
+	border-radius: 100%;
+}
+.speakerInfos {
+	width: calc(100% - 110rpx);
+}
+.speakerName {
+	margin-bottom: 16rpx;
+	font-size: 32rpx;
+	color: #000000;
+}
+.speakerCompany {
+	font-size: 24rpx;
+	color: #999999;
+}
+.proCardBtom {	
+	height: 90rpx;
+	background-color: #FFFFFF;
+}
+.followState, .ask, .sharePro {
+	width: auto !important;
+	/* width: 120rpx !important; */
+	height: 90rpx;
+	padding-left: 48rpx !important;
+	font-size: 24rpx !important;
+	line-height: 90rpx;
+	text-align: left;
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: 28rpx auto;
+	color: #666666;
+}
+.followState {
+	background-image: url("https://img.traveldaily.cn/events/app/2020/star1.png");
+}
+.followState.hasFollow {
+	background-image: url("https://img.traveldaily.cn/events/app/2020/star2.png");
+}
+.ask {
+	background-image: url("https://img.traveldaily.cn/events/app/2020/ask.png");
+}
+.sharePro {
+	margin: 0px !important;
+	font-weight: normal;
+	background-color: #FFFFFF;
+	background-image: url("https://img.traveldaily.cn/events/app/2020/share1.png");
+}
+.proCardBtom.hide {
+	display: none;
+}

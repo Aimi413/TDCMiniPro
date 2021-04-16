@@ -1,0 +1,150 @@
+
+.speakerBox {
+	margin: 30rpx 0px 0px;
+	padding-bottom: 250rpx;
+}
+.speaker {
+	height: 400rpx;
+	margin-bottom: 70rpx;
+	border-radius: 6px;
+	background: url("https://img.traveldaily.cn/events/app/2020/speaker/speakerDetailBg.png") top center no-repeat;
+	background-size: cover;
+	text-align: center;
+	overflow: hidden;
+}
+.speakerPhoto {
+	width: 156rpx;
+	height: 156rpx;
+	margin: 40rpx auto 20rpx;
+	border-radius: 100%;
+}
+.speakerName {
+	margin-bottom: 20rpx;
+	font-size: 40rpx;
+	line-height: 40rpx;
+	color: #ffffff;
+}
+.speakerCompany, .speakerJobTitle {
+	font-size: 24rpx;
+	color: #F5F5F5;
+}
+.speakerCompany {
+	margin-bottom: 20rpx;
+}
+.section {
+	margin-bottom: 36rpx;
+}
+.sectionHead {
+	margin-bottom: 36rpx;
+}
+.introBox {
+	margin-bottom: 35rpx;
+	overflow: hidden;
+}
+.introWrap {
+	font-size: 28rpx;
+	line-height: 48rpx;
+}
+.programBox {
+	margin-top: 70rpx;
+	padding-top: 36rpx;
+	border-top: 1px solid #E5E5E5;
+}
+.program {
+	box-sizing: border-box;
+	margin-bottom: 30rpx;
+	padding: 30rpx;
+	border-radius: 6px;
+	background: url("https://img.traveldaily.cn/events/app/2020/speaker/programBg1.png") left center no-repeat;
+	background-size: 100% 100%;
+}
+.programTime {
+	margin-bottom: 40rpx;
+	font-size: 24rpx;
+	color: #999999;
+}
+.programTopic {
+	font-size: 36rpx;
+	font-weight: bold;
+	line-height: 54rpx;
+	color: #000000;
+}
+.operateBox {
+	position: fixed;
+	bottom: 60rpx;
+	right: 20rpx;
+}
+.followSpeaker, .shareSpeaker {
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 108rpx !important;
+	height: 108rpx;
+	padding-top: 60rpx !important;
+	font-size: 20rpx !important;
+	border-radius: 4px;
+	background-color: var(--themeColor2);
+	background-position: top 20rpx center;
+	background-repeat: no-repeat;
+	background-size: auto 40rpx;
+	color: #FFFFFF;
+}
+.followSpeaker {
+	margin-right: 20rpx;
+	background-image: url("https://img.traveldaily.cn/events/app/2020/star3.png");
+}
+.followSpeaker.hasFollow {
+	background-image: url("https://img.traveldaily.cn/events/app/2020/star2.png");
+}
+.shareSpeaker {
+	font-weight: normal;
+	background-image: url("https://img.traveldaily.cn/events/app/2020/share2.png");
+}
+.goRegister {
+	width: 300rpx;
+	height: 108rpx;
+	margin-left: 20rpx;
+	font-size: 36rpx;
+	line-height: 108rpx;
+	text-align: center;
+	border-radius: 4px;
+	background-color: var(--themeColor);
+	color: #ffffff;
+}
+
+.posterBox {
+	width: 90%;
+	height: calc(100% - 290rpx);
+	margin: 0 auto 40rpx;
+	padding-top: 60rpx;
+}
+.posterImg {
+	width: 100%;
+	height: 100%;
+}
+.posterTip {
+	margin-bottom: 40rpx;
+	font-size: 32rpx;
+	line-height: 40rpx;
+	text-align: center;
+	color: #ffffff;
+}
+.posterBtns {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.posterBtn {
+	width: 240rpx;
+	height: 80rpx;
+	font-size: 36rpx;
+	text-align: center;
+	line-height: 80rpx;
+	border-radius: 40rpx;
+	color: #ffffff;
+}
+.savePoster {
+	background-color: #ffffff;
+	color: #000000;
+}

@@ -1,0 +1,162 @@
+.questionBox {
+	margin: 30rpx 0px 0px;
+	padding-bottom: 250rpx;
+}
+.marginBtom {
+	margin-bottom: 70rpx;
+}
+.questioner {
+	margin-bottom: 70rpx;
+	padding: 30rpx;
+	border-radius: 4px;
+	background: url("https://img.traveldaily.cn/events/app/2020/user/recentCardBg.png") top center no-repeat;
+	background-size: cover;
+	font-size: 0px;
+}
+.questionerInfo, .questionerPhoto {
+    display: inline-block;
+    vertical-align: middle;
+}
+.questionerInfo {
+    width: calc(100% - 226rpx);
+}
+.questionerName {
+    margin-bottom: 30rpx;
+    font-size: 44rpx;
+    font-weight: bold;
+    color: var(--themeColor2);
+}
+.questionerCompany {
+    font-size: 24rpx;
+    color: #666666;
+}
+.questionerPhoto {
+    width: 156rpx;
+    height: 156rpx;
+    margin-left: 70rpx;
+    border-radius: 100%;
+}
+.questionBody {
+	font-size: 0px;
+	margin-bottom: 70rpx;
+	padding-bottom: 70rpx;
+	border-bottom: 1px solid #E5E5E5;
+}
+.questionCaret, .questionInfo {
+	display: inline-block;
+	vertical-align: top;
+}
+.questionCaret {
+	width: 40rpx;
+	height: 40rpx;
+	margin-right: 20rpx;
+	font-size: 24rpx;
+	line-height: 40rpx;
+	text-align: center;
+	border-radius: 2px;
+	background-color: #FFA216;
+	color: #ffffff;
+}
+.questionInfo {
+	width: calc(100% - 60rpx);
+}
+.questionDesc {
+	margin-bottom: 30rpx;
+	font-size: 32rpx;
+	line-height: 48rpx;
+	color: #000000;
+}
+.questionLikeBox {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.questionTime {
+	font-size: 24rpx;
+	color: #CCCCCC;
+}
+.likeDesc {
+	display: flex;
+	align-items: center;
+	font-size: 24rpx;
+	color: #666666;
+}
+.likeIcon {
+	width: 28rpx;
+	height: 28rpx;
+	margin-right: 10rpx;
+}
+.sectionHead {
+	margin-bottom: 30rpx;
+}
+.programCard {
+	box-sizing: border-box;
+	border-radius: 6px;
+	overflow: hidden;
+}
+.proCardHead {
+	box-sizing: border-box;
+	display: flex;
+	height: 208rpx;
+	padding: 30rpx;
+	flex-wrap: wrap;
+	align-content: space-between;
+	background: url("https://img.traveldaily.cn/events/app/2020/speaker/programBg1.png") left center no-repeat;
+	background-size: 100% 100%;
+}
+.proTimeBox {
+	width: 100%;
+}
+.proTime {
+	font-size: 24rpx;
+	color: #999999;
+}
+.proTopic {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	font-size: 36rpx;
+	font-weight: bold;
+	line-height: 54rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.operateBox {
+	position: fixed;
+	bottom: 60rpx;
+	right: 20rpx;
+	z-index: 10;
+}
+.shareAsk {
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 108rpx !important;
+	height: 108rpx;
+	padding-top: 60rpx !important;
+	font-size: 20rpx;
+	border-radius: 4px;
+	background-color: var(--themeColor2);
+	background-position: top 20rpx center;
+	background-repeat: no-repeat;
+	background-size: auto 40rpx;
+	color: #FFFFFF;
+}
+.shareAsk {
+	font-weight: normal;
+	background-image: url("https://img.traveldaily.cn/events/app/2020/share2.png");
+}
+.starAskBtn {
+	width: 300rpx !important;
+	height: 108rpx;
+	margin-left: 20rpx !important;
+	font-size: 36rpx;
+	font-weight: normal;
+	line-height: 108rpx;
+	text-align: center;
+	border-radius: 4px;
+	background-color: var(--themeColor);
+	color: #ffffff;
+}

@@ -1,0 +1,18 @@
+<view class="publishBox">
+	<view class="container">
+		<view class="publishInputBox">
+			<textarea class="publishInput" placeholder="这一刻你的观点..." maxlength="200" bindinput="inputComment"></textarea>
+			<view class="limitBox"><text class="limitNum">{{ commentContent.length }}</text> / 200</view>
+		</view>
+		<view class="pictureBox" hidden="{{ nopic }}">
+			<view class="closePic" catchtap="closePic">
+				<image class="closePicImg" src="/imgs/close.svg"></image>
+			</view>
+			<image class="picture" src="{{ picUrl }}" mode="aspectFill"></image>
+		</view>
+		<view class="addPic" hidden="{{ !nopic }}" bindtap="choosePhoto">
+			<image class="addPicIcon" src="/imgs/add.png"></image>
+		</view>
+	</view>
+</view>
+<view class="publishBtn" bindtap="publishPost">发布</view>

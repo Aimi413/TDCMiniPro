@@ -1,0 +1,52 @@
+<view class="detailBox">
+	<view class="container">
+		<guestCard guest="{{ guest }}" showPrivacyTip="{{ true }}"></guestCard>
+		<view class="guestIntro" wx:if="{{ guest.intro }}">{{ guest.intro || '个人简介未填写' }}</view>
+		<!-- <view class="section interaction" hidden="{{ guest.messages.length < 0 }}"> -->
+		<view class="section interaction" wx:if="{{ guest.messages.length > 0 }}">
+			<view class="sectionHead">
+				<view class="sectionTitle">互动区</view>
+			</view>
+			<view class="interactionBox">
+				<view class="message clear" wx:for="{{ guest.messages }}" wx:key="id">
+					<image class="messager lt" src="{{ item.socialUser.photo }}" mode="aspectFill"></image>
+					<view class="messageInfos rt">
+						<view class="messagerNameBox clear">
+							<view class="messagerName ellipsis lt">
+								{{ item.socialUser.name }}
+							</view>
+							<view class="receiveTip rt" wx:if="{{ item.socialUser.id != guest.messages[index - 1].socialUser.id }}">
+								<image class="receiveTipIcon" src="/imgs/guest/receiveIcon.png"></image>
+								发来名片
+							</view>
+						</view>
+						<view class="messagerCompany ellipsis">
+							{{ item.socialUser.company }} {{ item.socialUser.jobTitle }}
+						</view>
+						<view class="messageContent">{{ item.content }}</view>
+						<view class="messageTime">{{ item.sentTime }}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="operateBox clear" wx:if="{{ profile.id != guest.id }}">
+	<!-- <navigator class="goDynamic lt" hover-class="none" url="/pages/plaza/detail/detail?id={{ guest.id }}">
+		<image class="dynamicIcon" src="/imgs/dynamicWhite.png"></image>
+		TA的动态
+	</navigator> -->
+	<view class="openContactWin rt" catchtap="openContactWin">联系TA</view>
+</view>
+<view class="dialogWin" hidden="{{ hideHelloWin }}">
+	<image class="closeDialogWin rt" catchtap="closeHelloWin" src="/imgs/close.svg"></image>
+	<view class="dialogBox">
+		<view class="container">
+			<guestCard guest="{{ profile }}" showPrivacyTip="{{ false }}"></guestCard>
+			<view class="sendBox clear">
+				<input class="helloInput lt" type="text" placeholder="打招呼内容" value="{{ defaultMsg }}" bindinput="inputHelloMsg" />
+				<view class="sendBtn lt" catchtap="sendHello" data-target="{{ guest.id }}">发送</view>
+			</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,82 @@
+page {
+	width: 100%;
+	height: 100%;
+}
+.concernTabs {
+    position: fixed;
+    width: 100%;
+    height: 100rpx;
+    padding: 0px 5%;
+    top: 0px;
+    left: 0px;
+    font-size: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+	background-color: var(--themeColor2);
+	z-index: 10;
+}
+.concernTab {
+    position: relative;
+    display: inline-block;
+    /* width: 140rpx; */
+    height: 100rpx;
+    margin-right: 100rpx;
+    font-size: 32rpx;
+    line-height: 100rpx;
+    border-bottom: 3px solid transparent;
+    color: #ffffff;
+}
+.concernTab {
+	position: relative;
+	display: inline-block;
+	height: 100rpx;
+	margin-right: 100rpx;
+	font-size: 32rpx;
+	line-height: 100rpx;
+	border-bottom: 3px solid transparent;
+	color: #ffffff;
+}
+.concernTab:last-child {
+	margin-right: 0px;
+}
+.concernTab::after {
+	content: "";
+	position: absolute;
+	width: 90rpx;
+	height: 3px;
+	bottom: 10rpx;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: transparent;
+}
+.concernTab.active::after {
+	background-color: var(--themeColor);
+}
+.concernBox {
+	width: 100%;
+	height: 100%;
+	padding-top: 130rpx;
+	background-color: #FEFEFE;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+.concernList {
+	display: none;
+}
+.concernList.show {
+	display: block;
+}
+.proType {
+	margin-bottom: 24rpx;
+	font-size: 28rpx;
+	color: #666666;
+}
+.marginBtom {
+	margin-bottom: 70rpx;
+	box-shadow: 0px 15px 20px 0px rgba(0,0,0,0.2); 
+}
+.outsideBoxshadow {
+	box-shadow: 0px 15px 20px 0px rgba(18,51,118,0.15); 
+}

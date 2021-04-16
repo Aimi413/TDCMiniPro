@@ -1,0 +1,99 @@
+.ellipsis{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.questionCard {
+	box-sizing: border-box;
+	padding: 30rpx;
+	margin-bottom: 28rpx;
+	border-radius: 6px;
+}
+.questioner {
+	margin-bottom: 36rpx;
+	font-size: 0px;
+}
+.questionerPhoto, .questionerName {
+	display: inline-block;
+	vertical-align: middle;
+}
+.questionerPhoto {
+	width: 50rpx;
+	height: 50rpx;
+	margin-right: 15rpx;
+	border-radius: 100%;
+}
+.questionerName {
+	width: calc(100% - 65rpx);
+	font-size: 24rpx;
+	color: #666666;
+}
+.questionerCompany {
+	margin-left: 10rpx;
+	color: #999999;
+}
+.questionBody {
+	font-size: 0px;
+}
+.questionCaret, .questionInfo {
+	display: inline-block;
+	vertical-align: top;
+}
+.questionCaret {
+	width: 40rpx;
+	height: 40rpx;
+	margin-right: 20rpx;
+	font-size: 24rpx;
+	line-height: 40rpx;
+	text-align: center;
+	border-radius: 2px;
+	background-color: #FFA216;
+	color: #ffffff;
+}
+.questionInfo {
+	width: calc(100% - 60rpx);
+}
+.questionDesc {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	margin-bottom: 30rpx;
+	font-size: 32rpx;
+	line-height: 48rpx;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #000000;
+}
+.questionLikeBox {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.questionTime {
+	font-size: 24rpx;
+	color: #CCCCCC;
+}
+.likeDesc {
+	display: flex;
+	align-items: center;
+	padding-left: 40rpx;
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: 28rpx 28rpx;
+	font-size: 24rpx;
+	color: #666666;
+}
+.likeDesc.clickable {
+	background-image: url(https://img.traveldaily.cn/events/app/2020/like2.png);
+}
+.likeDesc.unClickable {
+	background-image: url(https://img.traveldaily.cn/events/app/2020/like.png);
+}
+.likeDesc.clickable.liked {
+	background-image: url(https://img.traveldaily.cn/events/app/2020/like3.png);
+}
+.likeIcon {
+	width: 28rpx;
+	height: 28rpx;
+	margin-right: 10rpx;
+}

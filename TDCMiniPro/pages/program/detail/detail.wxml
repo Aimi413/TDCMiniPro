@@ -1,0 +1,82 @@
+<view class="detailPanel {{ typeClass }}">
+	<view class="proType">{{ program.typeName }}</view>
+	<view class="proTopic">{{ program.topic || program.typeName }}</view>
+	<view class="proTime">
+		<image class="proTimeIcon" src="/imgs/program/time.png"></image>
+		{{ program.date }} {{ program.begin }} - {{ program.end }}
+	</view>
+	<view class="proSite">
+		<image class="proSiteIcon" src="/imgs/program/site.png"></image>
+		{{ program.venueName || typeClass == 'dta' ? '格乐利雅艺术中心（徐汇店）16号宴会厅' : '上海国际会议中心7楼【上海厅】' }}
+	</view>
+</view>
+<view class="detailBox">
+	<view class="container">
+		<view class="section intro" wx:if="{{ program.summary != '' }}">
+			<view class="sectionHead">
+				<view class="sectionTitle">环节介绍</view>
+			</view>
+			<view class="proIntro"><rich-text nodes="{{ program.summary }}"></rich-text></view>
+		</view>
+		<view class="section speakers" wx:if="{{ program.details.length > 0 }}">
+			<view class="sectionHead">
+				<view class="sectionTitle">嘉宾介绍</view>
+			</view>
+			<view class="speakerList">
+				<block wx:for="{{ program.details }}" wx:key="index">
+					<view class="speakerType" wx:if="{{ item.dataType != '' }}">
+					<!-- <view class="speakerType" wx:if="{{ item.dataType != program.details[0].dataType || index == 0 }}"> -->
+						{{ item.dataType }}
+					</view>
+					<navigator class="goSpeakerDetail" hover-class="none" url="/pages/speaker/detail/detail?id={{ item.speaker.id }}">
+						<image class="speakerAvatar" src="{{ item.speaker.photo }}"></image>
+						<view class="speakerInfos">
+							<view class="speakerName ellipsis">{{ item.speaker.name }}</view>
+							<view class="speakerCompany ellipsis">{{ item.speaker.company }} {{ item.speaker.jobTitle }}</view>
+						</view>
+					</navigator>
+				</block>
+			</view>
+		</view>
+		<view class="section questions" wx:if="{{ program.questionList.length > 0 }}">
+			<view class="sectionHead clear">
+				<view class="sectionTitle lt">人气提问</view>
+				<navigator class="secHeadMoreLink rt" hover-class="none" url="/pages/program/questionlist/questionlist?id={{ program.id }}&topic={{ program.topic }}">
+					<text class="secMoreLinkText">全部</text>
+					<image class="secHeadMoreCaret" src="/imgs/home/rightArrow.svg"></image>					
+				</navigator>
+			</view>			
+			<questionCard wx:for="{{ program.questionList }}" wx:key="index" wx:if="{{ index < 3 }}" outside-class="yellowBg" question="{{ item }}" index="{{ index }}" hideQuestionTime="{{ true }}" hideQuestioner="{{ false }}" hideLikePersonDesc="{{ false }}"></questionCard>
+		</view>
+	</view>
+</view>
+<navigator class="goDynamic" hover-class="none" url="/pages/plaza/index/index">
+	<image class="goDynamicIcon" src="/imgs/dynamic.png"></image>
+</navigator>
+<view class="operateBox clear" wx:if="{{ program.topic != '' }}">
+	<view class="followPro lt {{ program.isSubscribed ? 'hasFollow' : '' }}" data-id="{{ program.id }}" data-concern="{{ program.isSubscribed }}" catchtap="followPro">
+		{{ program.isSubscribed ? '已关注' : '关注' }}
+	</view>
+	<!-- <navigator class="goQuestion lt" hover-class="none" url="/pages/program/questionlist/questionlist?id={{ program.id }}&topic={{ program.topic }}">
+		提问
+	</navigator> -->
+	<view class="goQuestion lt" catchtap="openAskWin">提问</view>
+	<!-- <view class="sharePro lt" data-id="{{ program.id }}" catchtap="sharePro">
+		分享
+	</view> -->
+	<button class="sharePro lt" data-id="{{ program.id }}" open-type="share">
+		分享
+	</button>
+	<!-- <navigator class="goRegister rt" hover-class="none" wx:if="{{ showRegisterBtn }}" url="/pages/guide/web/web?src=https://event.traveldaily.cn/tdc2020/register">立即报名</navigator> -->
+</view>
+<view class="dialogWin clear" hidden="{{ hideAskWin }}">
+	<image class="closeDialogWin rt" catchtap="closeWin" src="/imgs/close.svg"></image>
+	<view class="dialogBox">
+		<view class="container">
+			<view class="askInputBox">
+				<textarea class="askInput" placeholder="提问字数限100字" maxlength="100" value="{{ askContent }}" bindinput="inputAsk"></textarea>
+				<button class="submitAsk" bindtap="submitAsk">提问</button>
+			</view>
+		</view>
+	</view>
+</view>

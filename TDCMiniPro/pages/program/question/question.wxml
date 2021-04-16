@@ -1,0 +1,47 @@
+<view class="questionBox">
+	<view class="container">
+		<navigator class="questioner colorBor" hover-class="none" url="/pages/guest/detail/detail?id={{ questioner.id }}">
+			<view class="questionerInfo">
+				<view class="questionerName">{{ questioner.name }}</view>
+				<view class="questionerCompany">{{ questioner.company }} {{ questioner.jobTitle }}</view>
+			</view>
+			<image class="questionerPhoto" src="{{ questioner.photo }}" mode="aspectFill"></image>
+		</navigator>
+		<view class="questionBody">
+			<view class="questionCaret">问</view>
+			<view class="questionInfo">
+				<view class="questionDesc">{{ question.content }}</view>
+				<view class="questionLikeBox">
+					<view class="questionTime">提问于{{ question.postTime }}</view>
+					<view class="likeDesc">
+						<image class="likeIcon" src="/imgs/like.png"></image>
+						{{ question.likeCount }} <text class="likePersonDesc">人表示很赞</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="section">
+			<view class="sectionHead">
+				<view class="sectionTitle">提问环节</view>
+			</view>
+			<navigator class="programCard" hover-class="none" url="/pages/program/detail/detail?id={{ question.programId }}">
+				<view class="proCardHead">
+					<view class="proTimeBox clear">
+						<view class="proTime lt">{{ question.date }} {{ question.programBegin }} - {{ question.programEnd }}</view>
+					</view>
+					<view class="proTopic">{{ question.programTopic }}</view>
+				</view>
+			</navigator>
+		</view>
+	</view>
+</view>
+<view class="operateBox clear">
+	<!-- <view class="shareAsk lt" data-id="{{ question.id }}" catchtap="sharePro">
+		分享
+	</view> -->
+	<button class="shareAsk lt" data-id="{{ question.id }}" open-type="share">
+		分享
+	</button>
+	<button class="starAskBtn rt" data-id="{{ question.id }}" data-islike="{{ question.isLike }}" bindtap="starAsk">{{  question.isLike ? '已为TA点赞' : starBtnText }}</button>
+	<!-- <button class="starAskBtn rt" wx:if="{{ profile.id != question.netUserId }}" data-id="{{ question.id }}" data-islike="{{ question.isLike }}" bindtap="starAsk">{{ starBtnText }}</button> -->
+</view>

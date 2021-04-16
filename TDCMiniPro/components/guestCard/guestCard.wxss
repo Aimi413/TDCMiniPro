@@ -1,0 +1,118 @@
+.colorBor {
+	border: 2px solid;
+	border-color: #4474E6 #EF4A5B #EF4A5B #4474E6;
+}
+.ellipsis{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.guestCard {
+	position: relative;
+	padding: 30rpx;
+	border-radius: 4px;
+	background: url("https://img.traveldaily.cn/events/app/2020/user/profileCardBg.png") top center no-repeat;
+	background-size: cover;
+	font-size: 0px;	
+}
+.guestInfos {
+	font-size: 0px;
+}
+.guestInfo, .guestPhoto {
+	display: inline-block;
+	vertical-align: middle;
+}
+.guestInfo {
+	width: calc(100% - 226rpx);
+}
+.guestName {
+	margin-bottom: 30rpx;
+	font-size: 44rpx;
+	font-weight: bold;
+	color: var(--themeColor2);
+}
+.guestCompany {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	font-size: 24rpx;
+	line-height: 40rpx;
+	text-overflow: ellipsis;
+	color: #666666;
+}
+.guestPhoto {
+	width: 156rpx;
+	height: 156rpx;
+	margin-left: 70rpx;
+	border-radius: 100%;
+}
+.guestContacts {
+	margin-top: 24rpx;
+}
+.guestContact {
+	margin-bottom: 20rpx;
+	font-size: 28rpx;
+	text-align: left;
+	color: #666666;
+}
+.guestContact:last-child {
+	margin-bottom: 0px;
+}
+.contactIcon {
+	width: 28rpx;
+	height: 28rpx;
+	margin-right: 10rpx;
+}
+.privacyTip {
+	position: absolute;
+	width: 130rpx;
+	height: 40rpx;
+	right: 30rpx;
+	bottom: 30rpx;
+	align-items: center;
+	font-size: 24rpx;
+	line-height: 40rpx;
+	text-align: center;
+	color: #AAAAAA;
+	display: none;
+}
+.privacyTip.show {
+	display: flex;
+}
+.privacyTipIcon {
+	width: 24rpx;
+	height: 24rpx;
+	margin-right: 10rpx;
+}
+.privacyTipBox {
+	position: absolute;
+	width: 485rpx;
+	padding-top: 50rpx;
+	top: 0px;
+	right: -30rpx;
+	display: none;
+}
+.privacyTipWrap {
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 30rpx;
+	font-size: 28rpx;
+	line-height: 42rpx;
+	text-align: left;
+	border-radius: 6px;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: #ffffff;
+}
+.privacyTipWrap::before {
+	content: "";
+	position: absolute;
+	top: -14px;
+	right: 135rpx;
+	border: 7px solid transparent;
+	border-bottom-color: rgba(0, 0, 0, 0.8);
+}
+.privacyTip:hover .privacyTipBox {
+	display: block;
+}

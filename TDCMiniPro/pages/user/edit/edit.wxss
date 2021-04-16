@@ -1,0 +1,33 @@
+.editBox {
+	margin-top: 30rpx;
+}
+.editItem {
+	height: 120rpx;
+	padding-bottom: 30rpx;
+	border-bottom: 1px solid #E5E5E5;
+}
+.introItem {
+	height: 380rpx;
+}
+.editInput {
+	width: 100%;
+	height: 120rpx;
+}
+.introInput {
+	height: 380rpx;
+}
+.saveBtn {
+	position: fixed;
+	width: 300rpx;
+	height: 100rpx;
+	bottom: 40rpx;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 36rpx;
+	font-weight: normal;
+	line-height: 100rpx;
+	text-align: center;
+	border-radius: 4px;
+	background-color: var(--themeColor);
+	color: #ffffff;
+}
